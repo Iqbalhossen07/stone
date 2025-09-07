@@ -50,7 +50,7 @@
   </head>
   <body class="bg-white text-slate-900 font-body antialiased selection:bg-primary/20 selection:text-primary">
     <!-- Background FX -->
-    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10">
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 ">
       <div class="absolute -top-32 -left-24 h-80 w-80 rounded-full blur-3xl opacity-50 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/25 via-primary/10 to-transparent"></div>
       <div class="absolute top-40 -right-24 h-96 w-96 rounded-full blur-3xl opacity-40 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-400/20 via-amber-400/0 to-transparent"></div>
       <div class="absolute inset-0 noise"></div>
@@ -58,7 +58,7 @@
 
     <!-- Header -->
     <header class="fixed inset-x-0 top-0 z-50">
-      <div class="hidden md:block text-sm py-2 text-slate-800/80">
+      <div class="hidden md:block text-sm py-2 bg-primary text-white">
         <div class="container mx-auto px-6 flex items-center justify-between">
           <p class="opacity-70">Premium quality. Crafted with care.</p>
           <div class="flex items-center gap-4">
@@ -106,123 +106,150 @@
 
     <main>
       <!-- Hero -->
-<section class="relative pt-32 md:pt-40 pb-24 overflow-hidden">
-  <div aria-hidden="true" class="absolute inset-0 z-0 opacity-60">
-    <svg class="absolute top-0 left-0 w-full h-auto" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-      <path d="M0 200C0 200 360 400 720 200C1080 0 1440 200 1440 200V900H0V200Z" fill="url(#paint0_linear_wave)" />
-      <path d="M0 150C0 150 360 300 720 150C1080 0 1440 150 1440 150V900H0V150Z" fill="url(#paint1_linear_wave)" style="mix-blend-mode: overlay" />
-      <defs>
-        <linearGradient id="paint0_linear_wave" x1="720" y1="0" x2="720" y2="900" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#87550D" stop-opacity="0.05" />
-          <stop offset="1" stop-color="#87550D" stop-opacity="0" />
-        </linearGradient>
-        <linearGradient id="paint1_linear_wave" x1="720" y1="0" x2="720" y2="900" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#87550D" stop-opacity="0.1" />
-          <stop offset="1" stop-color="#87550D" stop-opacity="0" />
-        </linearGradient>
-      </defs>
-    </svg>
-  </div>
-
-  <div class="container mx-auto px-6 relative z-10">
-    <div class="grid gap-12 lg:grid-cols-2 items-start">
-      <div data-aos="fade-right" class="space-y-6 lg:text-left text-center">
-        <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs border border-primary/20">Premium Design Studio</span>
-        <h1 class="font-heading text-4xl leading-tight md:text-5xl lg:text-6xl">Elevate Your Brand with Elegant Digital Experiences</h1>
-        <p class="text-slate-600 max-w-lg mx-auto lg:mx-0 text-lg">We craft modern interfaces with smooth shadows, soft gradients, and seamless animations. Built to perform, designed to impress.</p>
-        <div class="flex flex-col sm:flex-row gap-3 pt-2 justify-center lg:justify-start">
-          <a href="#cta" class="btn-premium px-6 py-3 rounded-md">Get Started</a>
-          <a href="#services" class="inline-flex items-center justify-center px-5 py-3 rounded-md border hover:bg-slate-100">Our Services</a>
-        </div>
-        <div class="grid gap-6 sm:grid-cols-2 mt-12">
-          <div class="card-premium p-6 flex items-center gap-4 text-left" data-aos="zoom-in" data-aos-delay="100">
-            <div class="h-12 w-12 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-md ring-1 ring-primary/20 shrink-0">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <section class="relative pt-32 md:pt-40 pb-24 overflow-hidden">
+            <div aria-hidden="true" class="absolute inset-0 z-0 opacity-60">
+                <svg class="absolute top-0 left-0 w-full h-auto" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <path d="M0 200C0 200 360 400 720 200C1080 0 1440 200 1440 200V900H0V200Z" fill="url(#paint0_linear_wave)" />
+                <path d="M0 150C0 150 360 300 720 150C1080 0 1440 150 1440 150V900H0V150Z" fill="url(#paint1_linear_wave)" style="mix-blend-mode: overlay" />
+                <defs>
+                    <linearGradient id="paint0_linear_wave" x1="720" y1="0" x2="720" y2="900" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#87550D" stop-opacity="0.05" />
+                    <stop offset="1" stop-color="#87550D" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_wave" x1="720" y1="0" x2="720" y2="900" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#87550D" stop-opacity="0.1" />
+                    <stop offset="1" stop-color="#87550D" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+                </svg>
             </div>
-            <div>
-              <h3 class="font-heading text-lg text-slate-800">Trusted Results</h3>
-              <p class="text-sm text-slate-600 mt-1">Proven outcomes across startups and enterprises.</p>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="grid gap-12 lg:grid-cols-2 items-start">
+                <div data-aos="fade-right" class="space-y-6 lg:text-left text-center">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs border border-primary/20">Premium Design Studio</span>
+                    <h1 class="font-heading text-3xl leading-tight md:text-4xl lg:text-4xl">Elevate Your Brand with Elegant Digital Experiences</h1>
+                    <p class="text-slate-600 max-w-lg mx-auto lg:mx-0 text-lg">We craft modern interfaces with smooth shadows, soft gradients, and seamless animations. Built to perform, designed to impress.We craft modern interfaces with smooth shadows, soft gradients, and seamless animations.</p>
+                  
+                    <div class="flex flex-col sm:flex-row gap-3 pt-2 justify-center lg:justify-start">
+                    <a href="#cta" class="btn-premium px-6 py-3 rounded-md">Get Started</a>
+                    <a href="#services" class="inline-flex items-center justify-center px-5 py-3 rounded-md border hover:bg-slate-100">Our Services</a>
+                    </div>
+                    <div class="grid gap-6 sm:grid-cols-2 mt-12">
+                    <div class="card-premium p-6 flex items-center gap-4 text-left" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="h-12 w-12 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-md ring-1 ring-primary/20 shrink-0">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        </div>
+                        <div>
+                        <h3 class="font-heading text-lg text-slate-800">Trusted Results</h3>
+                        <p class="text-sm text-slate-600 mt-1">Proven outcomes across startups and enterprises.</p>
+                        </div>
+                    </div>
+                    <div class="card-premium p-6 flex items-center gap-4 text-left" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="h-12 w-12 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-md ring-1 ring-primary/20 shrink-0">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><path d="M8 2v20M16 2v20"></path></svg>
+                        </div>
+                        <div>
+                        <h3 class="font-heading text-lg text-slate-800">Performance-first</h3>
+                        <p class="text-sm text-slate-600 mt-1">Ship fast experiences without compromising aesthetics.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left" class="relative flex justify-center lg:justify-end lg:mt-0 mt-12">
+                    <div class="absolute top-4 left-0 bg-white/80 backdrop-blur-md p-3 rounded-lg shadow-soft-1 border border-slate-200 flex items-center gap-2 animate-float-slow z-20">
+                    <span class="h-4 w-4 rounded-full bg-green-500 block"></span>
+                    <span class="text-sm font-medium text-slate-700">Live Demo</span>
+                    </div>
+
+                    <div class="relative w-full max-w-2xl aspect-[4/3] bg-slate-200 rounded-xl flex items-center justify-center shadow-xl shadow-black/20 ring-1 ring-black/10">
+                    <iframe id="heroVideoFrame" class="absolute inset-0 w-full h-full rounded-xl" src="https://www.youtube.com/embed/1ucLq6JTxac?autoplay=1&rel=0&showinfo=0&modestbranding=1" title="Promo Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="absolute bottom-8 right-0 bg-white/80 backdrop-blur-md p-3 rounded-lg shadow-soft-1 border border-slate-200 flex items-center gap-2 animate-float-fast z-20">
+                    <span class="text-sm font-medium text-slate-700">New Feature!</span>
+                    <span class="h-4 w-4 rounded-full bg-blue-500 block"></span>
+                    </div>
+                </div>
+                </div>
             </div>
-          </div>
-          <div class="card-premium p-6 flex items-center gap-4 text-left" data-aos="zoom-in" data-aos-delay="200">
-            <div class="h-12 w-12 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-md ring-1 ring-primary/20 shrink-0">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><path d="M8 2v20M16 2v20"></path></svg>
-            </div>
-            <div>
-              <h3 class="font-heading text-lg text-slate-800">Performance-first</h3>
-              <p class="text-sm text-slate-600 mt-1">Ship fast experiences without compromising aesthetics.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div data-aos="fade-left" class="relative flex justify-center lg:justify-end lg:mt-0 mt-12">
-        <div class="absolute top-4 left-0 bg-white/80 backdrop-blur-md p-3 rounded-lg shadow-soft-1 border border-slate-200 flex items-center gap-2 animate-float-slow z-20">
-          <span class="h-4 w-4 rounded-full bg-green-500 block"></span>
-          <span class="text-sm font-medium text-slate-700">Live Demo</span>
-        </div>
-
-        <div class="relative w-full max-w-2xl aspect-[4/3] bg-slate-200 rounded-xl flex items-center justify-center shadow-xl shadow-black/20 ring-1 ring-black/10">
-          <iframe id="heroVideoFrame" class="absolute inset-0 w-full h-full rounded-xl" src="https://www.youtube.com/embed/1ucLq6JTxac?autoplay=1&rel=0&showinfo=0&modestbranding=1" title="Promo Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-
-        <div class="absolute bottom-8 right-0 bg-white/80 backdrop-blur-md p-3 rounded-lg shadow-soft-1 border border-slate-200 flex items-center gap-2 animate-float-fast z-20">
-          <span class="text-sm font-medium text-slate-700">New Feature!</span>
-          <span class="h-4 w-4 rounded-full bg-blue-500 block"></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            </section>
 
 
 
 
-
-
-
-
-
-      <!-- Success Cards -->
-      <section class="container mx-auto px-6 mt-16" data-aos="fade-up">
-        <div class="grid gap-4 sm:grid-cols-3">
-          <div class="glass rounded-xl p-6 shadow-soft-2">
-            <div class="text-3xl font-heading">+320%</div>
-            <p class="text-slate-600 text-sm mt-1">Avg. conversion lift</p>
-          </div>
-          <div class="glass rounded-xl p-6 shadow-soft-2">
-            <div class="text-3xl font-heading">98%</div>
-            <p class="text-slate-600 text-sm mt-1">Client satisfaction</p>
-          </div>
-          <div class="glass rounded-xl p-6 shadow-soft-2">
-            <div class="text-3xl font-heading">500+</div>
-            <p class="text-slate-600 text-sm mt-1">Brands we’ve helped</p>
-          </div>
-        </div>
-      </section>
 
       <!-- About -->
-      <section id="about" class="container mx-auto px-6 mt-24 grid items-center gap-10 lg:grid-cols-2">
-        <div data-aos="fade-right" class="relative">
-          <div class="rounded-xl overflow-hidden shadow-soft-3 ring-1 ring-black/10">
-            <img id="aboutImg" src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1600&auto=format&fit=crop" alt="About gallery" class="h-[360px] w-full object-cover" />
-          </div>
-        </div>
-        <div data-aos="fade-left" class="space-y-5">
-          <h2 class="font-heading text-3xl md:text-4xl">Design that feels inevitable</h2>
-          <p class="text-slate-600 max-w-prose">We obsess over the tiny details so your brand feels effortless. From smooth shadows to subtle glassmorphism, every element is tuned for elegance.</p>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="glass rounded-lg p-5">
-              <h4 class="font-heading mb-1">Precision engineering</h4>
-              <p class="text-sm text-slate-600">Performance-first builds that scale gracefully.</p>
+        <section id="about" class="py-24 bg-gradient-to-br from-slate-50/50 to-amber-50/50 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="grid items-center gap-12 lg:grid-cols-2">
+            
+            <div data-aos="fade-right" class="space-y-8 max-w-2xl mx-auto lg:mx-0">
+                <div class="relative w-full rounded-xl overflow-hidden shadow-soft-3 ring-1 ring-black/10">
+                <div id="imageCarousel" class="relative h-[360px] md:h-[400px] w-full">
+                    <img src="https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1600&auto=format&fit=crop" alt="About gallery image 3" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out carousel-image" alt="About gallery image 1" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out carousel-image active" />
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1600&auto=format&fit=crop" alt="About gallery image 2" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out carousel-image" />
+                    <img src="https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1600&auto=format&fit=crop" alt="About gallery image 3" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out carousel-image" />
+
+                    <button aria-label="Previous image" class="carousel-arrow absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur-md rounded-full p-2 text-slate-800 hover:bg-white transition-colors duration-300 shadow-md z-10" onclick="changeSlide(-1)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button aria-label="Next image" class="carousel-arrow absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur-md rounded-full p-2 text-slate-800 hover:bg-white transition-colors duration-300 shadow-md z-10" onclick="changeSlide(1)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+                <div id="carouselIndicators" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+                    <button aria-label="Slide 1" class="carousel-indicator h-3 w-3 rounded-full bg-slate-300 hover:bg-slate-400 active-indicator"></button>
+                    <button aria-label="Slide 2" class="carousel-indicator h-3 w-3 rounded-full bg-slate-300 hover:bg-slate-400"></button>
+                    <button aria-label="Slide 3" class="carousel-indicator h-3 w-3 rounded-full bg-slate-300 hover:bg-slate-400"></button>
+                </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <div class="card-premium p-4 text-center">
+                        <div class="font-heading text-3xl text-primary">10+</div>
+                        <p class="text-sm text-slate-600 mt-1">Years Experience</p>
+                    </div>
+                    <div class="card-premium p-4 text-center">
+                        <div class="font-heading text-3xl text-primary">150+</div>
+                        <p class="text-sm text-slate-600 mt-1">Projects Done</p>
+                    </div>
+                    <div class="card-premium p-4 text-center col-span-2 sm:col-span-1">
+                        <div class="font-heading text-3xl text-primary">99%</div>
+                        <p class="text-sm text-slate-600 mt-1">Happy Clients</p>
+                    </div>
+                </div>
             </div>
-            <div class="glass rounded-lg p-5">
-              <h4 class="font-heading mb-1">Timeless aesthetics</h4>
-              <p class="text-sm text-slate-600">Minimal, modern design that endures trends.</p>
+            
+            <div data-aos="fade-left" class="space-y-6 lg:text-left text-center shadow-sm p-4">
+                <h3 class="font-heading text-lg font-semibold text-primary tracking-widest uppercase">About Us</h3>
+                <h2 class="font-heading text-3xl md:text-4xl text-slate-900 leading-tight">Crafting Digital Excellence for Your Brand</h2>
+                <p class="text-slate-700 max-w-prose mx-auto lg:mx-0 text-lg leading-relaxed">
+                We are a dedicated team passionate about transforming visions into stunning digital realities. Our approach combines innovative design with robust development to deliver experiences that truly resonate.
+                </p>
+                <ul class="space-y-3 pt-4 text-left mx-auto lg:mx-0 max-w-md">
+                <li class="flex items-start gap-3 ">
+                    <svg class="h-6 w-6 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span class="text-slate-700 text-lg">Focus on user-centric design principles.</span>
+                </li>
+                <li class="flex items-start gap-3 ">
+                    <svg class="h-6 w-6 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span class="text-slate-700 text-lg">Seamless integration of modern technologies.</span>
+                </li>
+                <li class="flex items-start gap-3 ">
+                    <svg class="h-6 w-6 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span class="text-slate-700 text-lg">Exceptional post-launch support and optimization.</span>
+                </li>
+                </ul>
+                <div class="pt-6">
+                    <a href="#team" class="btn-premium">Meet Our Team</a>
+                </div>
             </div>
-          </div>
+            </div>
         </div>
-      </section>
+        </section>
+
 
       <!-- Services -->
       <section id="services" class="container mx-auto px-6 mt-24">
@@ -454,28 +481,52 @@
   }
 
 
-      // About slider
-      const aboutImgs = [
-        'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?q=80&w=1600&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1600&auto=format&fit=crop'
-      ];
-      const aboutEl = document.getElementById('aboutImg');
-      let ai = 0; setInterval(() => { ai = (ai + 1) % aboutImgs.length; aboutEl.src = aboutImgs[ai]; }, 3500);
-      // Video play overlay
-      const playBtn = document.getElementById('playOverlay');
-      const frame = document.getElementById('videoFrame');
-      const poster = document.getElementById('videoPoster');
-      playBtn.addEventListener('click', () => { frame.src = 'https://www.youtube.com/embed/ysz5S6PUM-U?autoplay=1&rel=0'; poster.remove(); playBtn.remove(); });
-      // Testimonials slider
-      const tWrap = document.getElementById('tWrap'); const dots = Array.from(document.querySelectorAll('.dot'));
-      let ti = 0; function go(n){ ti = (n + 3) % 3; tWrap.style.transform = `translateX(-${ti*100}%)`; dots.forEach((d,idx)=>{ d.classList.toggle('bg-primary', idx===ti); d.classList.toggle('w-6', idx===ti); }); }
-      document.getElementById('tPrev').addEventListener('click', ()=>go(ti-1));
-      document.getElementById('tNext').addEventListener('click', ()=>go(ti+1));
-      dots.forEach((d,idx)=>d.addEventListener('click',()=>go(idx)));
-      setInterval(()=>go(ti+1), 5000);
-      // Footer year
-      document.getElementById('year').textContent = new Date().getFullYear();
+//  about 
+
+let currentSlide = 0;
+  const carouselImages = document.querySelectorAll('.carousel-image');
+  const carouselIndicators = document.querySelectorAll('.carousel-indicator');
+  
+  if (carouselImages.length > 0) {
+    const totalSlides = carouselImages.length;
+
+    function showSlide(index) {
+      carouselImages.forEach((img, i) => {
+        img.classList.remove('active', 'opacity-100');
+        img.classList.add('opacity-0');
+        if (i === index) {
+          img.classList.add('active', 'opacity-100');
+        }
+      });
+
+      carouselIndicators.forEach((indicator, i) => {
+        indicator.classList.remove('active-indicator', 'bg-primary');
+        indicator.classList.add('bg-slate-300');
+        if (i === index) {
+          indicator.classList.add('active-indicator', 'bg-primary');
+          indicator.classList.remove('bg-slate-300');
+        }
+      });
+    }
+
+    function changeSlide(direction) {
+      currentSlide += direction;
+      if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+      } else if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+      }
+      showSlide(currentSlide);
+    }
+    
+    // Initial display
+    showSlide(currentSlide);
+    
+    // Auto-advance slides every 5 seconds
+    setInterval(() => {
+      changeSlide(1);
+    }, 5000);
+  }
     </script>
   </body>
 </html>
