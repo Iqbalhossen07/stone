@@ -85,6 +85,94 @@
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
   }
+
+  /* image */
+
+    .scroller {
+    /* max-width is now controlled by the container, so this is not strictly needed but good for fallback */
+    max-width: 100%; 
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  }
+
+  .scroller__inner {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding-block: 1rem;
+    animation: scroll 40s linear infinite;
+  }
+  
+  .scroller:hover .scroller__inner {
+      animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+
+  .tag-list {
+    margin: 0;
+    padding-inline: 0;
+    list-style: none;
+  }
+  
+  .gallery-card {
+      position: relative;
+      width: 350px;
+      height: 220px;
+      border-radius: 0.75rem; /* rounded-xl */
+      overflow: hidden;
+      box-shadow: 0 6px 24px -8px rgba(0,0,0,.15); /* shadow-soft-1 */
+      border: 1px solid rgba(15,23,42,.08);
+      transition: all 0.3s ease;
+  }
+  
+  .gallery-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 18px 48px -12px rgba(0,0,0,.28); /* shadow-soft-3 */
+  }
+
+  .gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-card:hover img {
+      transform: scale(1.05);
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .gallery-card:hover .gallery-overlay {
+      opacity: 1;
+  }
+  
+  .gallery-overlay h3 {
+      font-family: 'Merriweather', serif; /* font-heading */
+      font-size: 1.25rem; /* text-xl */
+      transform: translateY(10px);
+      transition: transform 0.3s ease;
+  }
+  
+  .gallery-card:hover .gallery-overlay h3 {
+      transform: translateY(0);
+  }
     </style>
   </head>
   <body class="bg-white text-slate-900 font-body antialiased selection:bg-primary/20 selection:text-primary">
@@ -543,17 +631,79 @@
 
 
       <!-- Gallery -->
-      <section id="gallery" class="container mx-auto px-6 mt-24" data-aos="fade-up">
-        <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          <!-- 6 images -->
-          <div class="group overflow-hidden rounded-xl border relative"><img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=1600&auto=format&fit=crop" alt="Gallery 1" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:blur-[1px]" /><div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div>
-          <div class="group overflow-hidden rounded-xl border relative"><img src="https://images.unsplash.com/photo-1521170665346-3f21e2291d8b?q=80&w=1600&auto=format&fit=crop" alt="Gallery 2" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:blur-[1px]" /><div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div>
-          <div class="group overflow-hidden rounded-xl border relative"><img src="https://images.unsplash.com/photo-1523246205-1c1a1fd0d048?q=80&w=1600&auto=format&fit=crop" alt="Gallery 3" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:blur-[1px]" /><div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div>
-          <div class="group overflow-hidden rounded-xl border relative"><img src="https://images.unsplash.com/photo-1526401485004-2fda9f4e2d93?q=80&w=1600&auto=format&fit=crop" alt="Gallery 4" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:blur-[1px]" /><div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div>
-          <div class="group overflow-hidden rounded-xl border relative"><img src="https://images.unsplash.com/photo-1520975922325-24b69be8492b?q=80&w=1600&auto=format&fit=crop" alt="Gallery 5" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:blur-[1px]" /><div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div>
-          <div class="group overflow-hidden rounded-xl border relative"><img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop" alt="Gallery 6" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:blur-[1px]" /><div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div>
+        <section id="gallery" class="relative py-24 bg-slate-50/50 overflow-hidden">
+        
+        <div aria-hidden="true" class="absolute inset-0 z-0 opacity-60">
+            <svg class="absolute top-0 left-0 w-full h-auto" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <path d="M0 200C0 200 360 400 720 200C1080 0 1440 200 1440 200V900H0V200Z" fill="url(#paint0_linear_wave_gallery)" />
+            <path d="M0 150C0 150 360 300 720 150C1080 0 1440 150 1440 150V900H0V150Z" fill="url(#paint1_linear_wave_gallery)" style="mix-blend-mode: overlay" />
+            <defs>
+                <linearGradient id="paint0_linear_wave_gallery" x1="720" y1="0" x2="720" y2="900" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#87550D" stop-opacity="0.05" />
+                <stop offset="1" stop-color="#87550D" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient id="paint1_linear_wave_gallery" x1="720" y1="0" x2="720" y2="900" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#87550D" stop-opacity="0.1" />
+                <stop offset="1" stop-color="#87550D" stop-opacity="0" />
+                </linearGradient>
+            </defs>
+            </svg>
         </div>
-      </section>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+            <h3 class="font-heading text-lg font-semibold text-primary tracking-widest uppercase mb-2" data-aos="fade-up">Our Gallery</h3>
+            <h2 class="font-heading text-3xl md:text-4xl text-slate-900 leading-tight" data-aos="fade-up" data-aos-delay="100">A Glimpse into Our Creative World</h2>
+            <p class="text-slate-600 mt-4 text-lg" data-aos="fade-up" data-aos-delay="200">
+                Explore a curated collection of our finest projects and moments that define our passion for excellence.
+            </p>
+            </div>
+
+            <div class="scroller" data-speed="slow" data-aos="fade-up" data-aos-delay="300">
+            <ul class="tag-list scroller__inner">
+                <li>
+                <div class="gallery-card group">
+                    <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 1" />
+                    <div class="gallery-overlay"><h3>Project Alpha</h3></div>
+                </div>
+                </li>
+                <li>
+                <div class="gallery-card group">
+                    <img src="https://images.unsplash.com/photo-1521170665346-3f21e2291d8b?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 2" />
+                    <div class="gallery-overlay"><h3>Brand Identity</h3></div>
+                </div>
+                </li>
+                <li>
+                <div class="gallery-card group">
+                    <img src="https://images.unsplash.com/photo-1523246205-1c1a1fd0d048?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 3" />
+                    <div class="gallery-overlay"><h3>Web Platform</h3></div>
+                </div>
+                </li>
+                <li>
+                <div class="gallery-card group">
+                    <img src="https://images.unsplash.com/photo-1526401485004-2fda9f4e2d93?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 4" />
+                    <div class="gallery-overlay"><h3>Mobile App</h3></div>
+                </div>
+                </li>
+                <li>
+                <div class="gallery-card group">
+                    <img src="https://images.unsplash.com/photo-1520975922325-24b69be8492b?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 5" />
+                    <div class="gallery-overlay"><h3>Digital Campaign</h3></div>
+                </div>
+                </li>
+                <li>
+                <div class="gallery-card group">
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 6" />
+                    <div class="gallery-overlay"><h3>E-commerce Solution</h3></div>
+                </div>
+                </li>
+                </ul>
+            </div>
+        </div>
+        </section>
+
+
+
 
       <!-- Video Section -->
       <section class="container mx-auto px-6 mt-24" data-aos="zoom-in-up">
@@ -793,6 +943,29 @@ const tabs = document.querySelectorAll('.w-choose-us-tab');
       activateTab(tab);
     });
   });
+
+
+    const scrollers = document.querySelectorAll(".scroller");
+
+  if (scrollers.length > 0 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    addAnimation();
+  }
+
+  function addAnimation() {
+    scrollers.forEach((scroller) => {
+      if (scroller.getAttribute("data-animated")) return; // Prevent re-running the animation setup
+
+      scroller.setAttribute("data-animated", true);
+      const scrollerInner = scroller.querySelector(".scroller__inner");
+      const scrollerContent = Array.from(scrollerInner.children);
+
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        duplicatedItem.setAttribute("aria-hidden", true);
+        scrollerInner.appendChild(duplicatedItem);
+      });
+    });
+  }
     </script>
   </body>
 </html>
