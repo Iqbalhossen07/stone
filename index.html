@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Aurelia — Premium Studio (Static)</title>
+    <title>Stonebridge Legal — Premium Studio</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Merriweather:wght@700;800&display=swap" rel="stylesheet" />
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -31,321 +32,7 @@
         }
       }
     </script>
-    <style>
-      .glass{background:rgba(255,255,255,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(15,23,42,.08)}
-      .btn-premium{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:.75rem 1.25rem;border-radius:.5rem;background-image:linear-gradient(to bottom right,#87550D,#9e6b1a);color:#fff;box-shadow:0 12px 36px -10px rgba(0,0,0,.2)}
-      .btn-premium:hover{transform:translateY(-2px);box-shadow:0 18px 48px -12px rgba(0,0,0,.28)}
-      .btn-premium::before{content:"";position:absolute;inset:-150% auto auto -40%;width:30%;height:200%;background:linear-gradient(120deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.25) 50%,rgba(255,255,255,0) 100%);transform:rotate(25deg);transition:transform .6s ease}
-      .btn-premium:hover::before{transform:translateX(260%) rotate(25deg)}
-      .card-premium{border-radius:.75rem;border:1px solid rgba(15,23,42,.08);background:rgba(255,255,255,.7);backdrop-filter:blur(16px);box-shadow:0 6px 24px -8px rgba(0,0,0,.15);transition:box-shadow .25s,transform .25s}
-      .card-premium:hover{box-shadow:0 18px 48px -12px rgba(0,0,0,.28)}
-      .noise{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.05;mix-blend:multiply}
-
-      /* Existing styles are kept from the previous response for context */
-  @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-  .animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
-  @keyframes float-fast { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-  .animate-float-fast { animation: float-fast 5s ease-in-out infinite; }
-
-
-  /* why choose us */
-
-    /* Tab Styles */
-  .w-choose-us-tab {
-    background-color: transparent;
-    border: 1px solid transparent;
-    color: #475569; /* slate-600 */
-  }
-  .w-choose-us-tab div {
-    background-color: #f1f5f9; /* slate-100 */
-    color: #475569; /* slate-600 */
-    transition: all 0.3s;
-  }
-  .w-choose-us-tab:hover div {
-    background-color: #fde68a; /* amber-200 */
-    color: var(--tw-color-primary, #87550D);
-  }
-  .w-choose-us-tab.active {
-    background-color: #fff;
-    border-color: #e2e8f0; /* slate-200 */
-    box-shadow: 0 6px 24px -8px rgba(0,0,0,.15); /* shadow-soft-1 */
-    color: var(--tw-color-primary, #87550D);
-  }
-  .w-choose-us-tab.active div {
-    background-color: var(--tw-color-primary, #87550D);
-    color: #fff;
-    box-shadow: 0 0 0 2px rgba(135,85,13,.2), 0 12px 40px -6px rgba(135,85,13,.35); /* shadow-glow */
-  }
-
-  /* Panel Animation */
-  .w-choose-us-panel {
-    animation: fadeIn 0.5s ease-in-out;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* image */
-
-    .scroller {
-    /* max-width is now controlled by the container, so this is not strictly needed but good for fallback */
-    max-width: 100%; 
-    overflow: hidden;
-    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-  }
-
-  .scroller__inner {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 1rem;
-    padding-block: 1rem;
-    animation: scroll 40s linear infinite;
-  }
-  
-  .scroller:hover .scroller__inner {
-      animation-play-state: paused;
-  }
-
-  @keyframes scroll {
-    to {
-      transform: translate(calc(-50% - 0.5rem));
-    }
-  }
-
-  .tag-list {
-    margin: 0;
-    padding-inline: 0;
-    list-style: none;
-  }
-  
-  .gallery-card {
-      position: relative;
-      width: 350px;
-      height: 220px;
-      border-radius: 0.75rem; /* rounded-xl */
-      overflow: hidden;
-      box-shadow: 0 6px 24px -8px rgba(0,0,0,.15); /* shadow-soft-1 */
-      border: 1px solid rgba(15,23,42,.08);
-      transition: all 0.3s ease;
-  }
-  
-  .gallery-card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 18px 48px -12px rgba(0,0,0,.28); /* shadow-soft-3 */
-  }
-
-  .gallery-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-  
-  .gallery-card:hover img {
-      transform: scale(1.05);
-  }
-
-  .gallery-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-    display: flex;
-    align-items: flex-end;
-    padding: 1.5rem;
-    color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .gallery-card:hover .gallery-overlay {
-      opacity: 1;
-  }
-  
-  .gallery-overlay h3 {
-      font-family: 'Merriweather', serif; /* font-heading */
-      font-size: 1.25rem; /* text-xl */
-      transform: translateY(10px);
-      transition: transform 0.3s ease;
-  }
-  
-  .gallery-card:hover .gallery-overlay h3 {
-      transform: translateY(0);
-  }
-
-  /* videos */
-
-    .video-card-container {
-    position: relative;
-    border-radius: 0.75rem; /* 12px */
-    padding: 2px; /* Border thickness */
-    transition: all 0.3s ease;
-    cursor: pointer;
-    overflow: hidden;
-  }
-  .video-card-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 18px 48px -12px rgba(0,0,0,.28);
-  }
-  /* Rotating background for the border effect */
-  .video-card-container::before {
-    content: '';
-    position: absolute;
-    inset: -200%;
-    z-index: 1;
-    background: conic-gradient(
-      from 90deg,
-      transparent 50%,
-      var(--tw-color-primary, #87550D),
-      transparent
-    );
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
-  .video-card-container:hover::before {
-    opacity: 1;
-    animation: spin 3s linear infinite;
-  }
-  /* The actual content that masks the rotating background */
-  .video-card-content {
-    position: relative;
-    z-index: 2;
-    background: rgba(255,255,255,.7);
-    border-radius: 0.65rem; /* Slightly smaller than container */
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  /* Modal Styles */
-  .video-modal-container {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    pointer-events: none;
-  }
-  .video-modal-container:not(.hidden) {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  /* team */
-
-   .team-card {
-    position: relative;
-    border-radius: 0.75rem; /* 12px */
-    padding: 2px; /* Border thickness */
-    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    cursor: pointer;
-    overflow: hidden; /* Hide the glowing border when it's outside */
-  }
-  .team-card:hover {
-    transform: translateY(-8px); /* More pronounced lift */
-    box-shadow: 0 20px 50px -10px rgba(0,0,0,.35); /* Stronger shadow */
-  }
-  /* Glowing Border Effect */
-  .team-card::before {
-    content: '';
-    position: absolute;
-    inset: -200%; /* Make the background large enough to rotate fully */
-    z-index: 1;
-    background: conic-gradient(
-      from 90deg at 50% 50%,
-      transparent 50%,
-      var(--tw-color-primary, #87550D) 60%, /* Start of glow */
-      var(--tw-color-primary-light, #BA863A) 70%, /* Brighter part of glow */
-      transparent 80% /* End of glow */
-    );
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
-  }
-  .team-card:hover::before {
-    opacity: 0.8; /* Slight opacity for a subtle glow */
-    animation: rotate-glow 4s linear infinite;
-  }
-  @keyframes rotate-glow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  /* Inner content container to mask the rotating glow */
-  .team-card-inner {
-    position: relative;
-    z-index: 2; /* Ensures content is above the glow */
-    background: rgba(255, 255, 255, 0.9); /* Slightly more opaque for content clarity */
-    border-radius: 0.65rem; /* Slightly smaller than container */
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    box-shadow: 0 6px 24px -8px rgba(0,0,0,.15); /* Soft inner shadow */
-    border: 1px solid rgba(15,23,42,.08); /* Subtle inner border */
-    transition: background-color 0.3s ease;
-  }
-  .team-card:hover .team-card-inner {
-      background: rgba(255, 255, 255, 1); /* Fully opaque on hover */
-  }
-
-  .social-panel {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 60px; /* Fixed width for the panel */
-    background: hsla(var(--tw-color-primary-hsl, 35 81% 29%) / 0.95); /* Slightly darker for contrast */
-    backdrop-filter: blur(5px); /* Stronger blur */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.25rem; /* Increased gap */
-    transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Smoother animation */
-    z-index: 3; /* Ensure it's above other elements */
-    border-top-right-radius: 0.65rem;
-    border-bottom-right-radius: 0.65rem;
-  }
-  .team-card:hover .social-panel {
-    transform: translateX(0);
-  }
-  .social-link {
-    color: white;
-    padding: 0.6rem; /* Larger hit area */
-    border-radius: 9999px;
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle background */
-    transition: background-color 0.2s, transform 0.2s;
-  }
-  .social-link:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    transform: scale(1.1); /* Pop effect on hover */
-  }
-
-    .testimonial-card > div {
-    border: 1px solid rgba(15,23,42,.08);
-    box-shadow: 0 6px 24px -8px rgba(0,0,0,.05);
-    transition: all 0.3s ease;
-  }
-  .testimonial-card:hover > div {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 36px -10px rgba(0,0,0,.1);
-  }
-  .testimonial-dot {
-    display: block;
-    width: 12px;
-    height: 12px;
-    border-radius: 9999px;
-    background-color: #cbd5e1;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .testimonial-dot.active {
-    background-color: var(--tw-color-primary, #87550D);
-  }
-    </style>
+   <link rel="stylesheet" href="style.css">
   </head>
   <body class="bg-white text-slate-900 font-body antialiased selection:bg-primary/20 selection:text-primary">
     <!-- Background FX -->
@@ -357,24 +44,41 @@
 
     <!-- Header -->
     <header class="fixed inset-x-0 top-0 z-50">
-      <div class="hidden md:block text-sm py-2 bg-primary text-white">
-        <div class="container mx-auto px-6 flex items-center justify-between">
-          <p class="opacity-70">Premium quality. Crafted with care.</p>
-          <div class="flex items-center gap-4">
-            <a href="#blog" class="hover:opacity-80 transition-opacity">Blog</a>
-            <a href="#cta" class="hover:opacity-80 transition-opacity">Contact</a>
-          </div>
-        </div>
-      </div>
+   <div class="hidden md:block text-sm py-2 bg-primary text-white">
+  <div class="container mx-auto px-6 flex items-center justify-between">
+    
+    <div class="flex items-center gap-6">
+      <a href="mailto:info@stonebridgelegal.co.uk" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <span>info@stonebridgelegal.co.uk</span>
+      </a>
+      <a href="tel:+447988138221" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span>+447988138221</span>
+      </a>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <a href="#login" class="hover:opacity-80 transition-opacity">Login</a>
+      <a href="#register" class="px-3 py-1 text-xs border border-white/50 rounded-full hover:bg-white/10 transition-colors">Register</a>
+    </div>
+
+  </div>
+</div>
       <div id="navWrap" class="transition-all bg-white/70 backdrop-blur-xl border-b shadow-soft-1">
         <div class="h-0.5 bg-primary/30" id="progressBar" style="width:0%"></div>
         <nav class="container mx-auto px-6 flex items-center justify-between py-4">
           <a href="#" class="inline-flex items-center gap-2">
-            <span class="inline-block h-8 w-8 rounded-lg bg-primary shadow-glow"></span>
-            <span class="font-heading text-xl">Aurelia</span>
+            <img class="w-1/6" src="img/logo.png" alt="">
           </a>
-          <ul class="hidden md:flex items-center gap-8">
-            <li><a href="#about" class="text-sm tracking-wide hover:text-primary transition-colors">About</a></li>
+          <ul class="hidden md:flex items-center gap-8 font-semibold">
+            <li><a href="#" class="text-sm tracking-wide hover:text-primary  transition-colors">Home</a></li>
+            <li><a href="#about" class="text-sm tracking-wide hover:text-primary  transition-colors">About</a></li>
             <li><a href="#services" class="text-sm tracking-wide hover:text-primary transition-colors">Services</a></li>
             <li><a href="#why-us" class="text-sm tracking-wide hover:text-primary transition-colors">Why Us</a></li>
             <li><a href="#gallery" class="text-sm tracking-wide hover:text-primary transition-colors">Gallery</a></li>
@@ -405,7 +109,7 @@
 
     <main>
       <!-- Hero -->
-            <section class="relative pt-32 md:pt-40 pb-24 overflow-hidden">
+            <section id="#" class="relative pt-32 md:pt-40 pb-24 overflow-hidden">
             <div aria-hidden="true" class="absolute inset-0 z-0 opacity-60">
                 <svg class="absolute top-0 left-0 w-full h-auto" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
                 <path d="M0 200C0 200 360 400 720 200C1080 0 1440 200 1440 200V900H0V200Z" fill="url(#paint0_linear_wave)" />
@@ -585,8 +289,9 @@
                 <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="300">
                     <h3 class="font-heading text-xl text-slate-800 mb-4">Sponsorship Licence</h3>
                     <div class="flex items-center gap-4">
-                        <div class="h-16 w-16 bg-blue-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-blue-200 shrink-0">
-                        <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163212_1001920894_2.png" alt="Sponsorship Licence Icon" class="h-full w-full object-contain" />
+                       <div class="h-16 w-16 bg-orange-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-orange-200 shrink-0">
+
+                        <img src="img/Sponsorship Licence.webp" alt="Sponsorship Licence Icon" class="h-full w-full object-contain" />
                         </div>
                         <ul class="space-y-2 text-slate-700">
                         <li class="flex items-center gap-2">
@@ -608,8 +313,8 @@
                 <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="400">
                     <h3 class="font-heading text-xl text-slate-800 mb-4">Immigration Compliance</h3>
                     <div class="flex items-center gap-4">
-                        <div class="h-16 w-16 bg-green-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-green-200 shrink-0">
-                        <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163628_1001920894_10.png" alt="Immigration Compliance Icon" class="h-full w-full object-contain" />
+                    <div class="h-16 w-16 bg-orange-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-orange-200 shrink-0">
+                        <img src="img/Immigration Compliance.webp" alt="Immigration Compliance Icon" class="h-full w-full object-contain" />
                         </div>
                         <ul class="space-y-2 text-slate-700">
                         <li class="flex items-center gap-2">
@@ -632,7 +337,7 @@
                     <h3 class="font-heading text-xl text-slate-800 mb-4">Skilled Worker Visas</h3>
                     <div class="flex items-center gap-4">
                         <div class="h-16 w-16 bg-orange-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-orange-200 shrink-0">
-                        <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163720_1001920894_12.png" alt="Skilled Worker Visas Icon" class="h-full w-full object-contain" />
+                        <img src="img/Skilled Worker.webp" alt="Skilled Worker Visas Icon" class="h-full w-full object-contain" />
                         </div>
                         <ul class="space-y-2 text-slate-700">
                         <li class="flex items-center gap-2">
@@ -651,10 +356,10 @@
                     </div>
                 </div>
                 <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="font-heading text-xl text-slate-800 mb-4">Sponsorship Licence</h3>
+                    <h3 class="font-heading text-xl text-slate-800 mb-4">Temporary (Tier 5) Visas</h3>
                     <div class="flex items-center gap-4">
-                        <div class="h-16 w-16 bg-blue-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-blue-200 shrink-0">
-                        <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163212_1001920894_2.png" alt="Sponsorship Licence Icon" class="h-full w-full object-contain" />
+                         <div class="h-16 w-16 bg-orange-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-orange-200 shrink-0">
+                        <img src="img/Temporary.webp" alt="Sponsorship Licence Icon" class="h-full w-full object-contain" />
                         </div>
                         <ul class="space-y-2 text-slate-700">
                         <li class="flex items-center gap-2">
@@ -674,10 +379,10 @@
                 </div>
 
                 <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="400">
-                    <h3 class="font-heading text-xl text-slate-800 mb-4">Immigration Compliance</h3>
+                    <h3 class="font-heading text-xl text-slate-800 mb-4">Partner and family Visas</h3>
                     <div class="flex items-center gap-4">
-                        <div class="h-16 w-16 bg-green-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-green-200 shrink-0">
-                        <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163628_1001920894_10.png" alt="Immigration Compliance Icon" class="h-full w-full object-contain" />
+                          <div class="h-16 w-16 bg-orange-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-orange-200 shrink-0">
+                        <img src="img/Partner and family.webp" alt="Immigration Compliance Icon" class="h-full w-full object-contain" />
                         </div>
                         <ul class="space-y-2 text-slate-700">
                         <li class="flex items-center gap-2">
@@ -697,10 +402,10 @@
                 </div>
 
                 <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="500">
-                    <h3 class="font-heading text-xl text-slate-800 mb-4">Skilled Worker Visas</h3>
+                    <h3 class="font-heading text-xl text-slate-800 mb-4">Global Business Mobility</h3>
                     <div class="flex items-center gap-4">
                         <div class="h-16 w-16 bg-orange-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-orange-200 shrink-0">
-                        <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163720_1001920894_12.png" alt="Skilled Worker Visas Icon" class="h-full w-full object-contain" />
+                        <img src="img/Global Business.webp" alt="Skilled Worker Visas Icon" class="h-full w-full object-contain" />
                         </div>
                         <ul class="space-y-2 text-slate-700">
                         <li class="flex items-center gap-2">
@@ -733,7 +438,7 @@
 
 
       <!-- Why Us -->
-        <section id="why-choose-us" class="py-24 bg-white overflow-hidden">
+        <section id="why-us" class="py-24 bg-white overflow-hidden">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
             <h3 class="font-heading text-lg font-semibold text-primary tracking-widest uppercase mb-2" data-aos="fade-up">Why Choose Us</h3>
@@ -835,37 +540,37 @@
             <ul class="tag-list scroller__inner">
                 <li>
                 <div class="gallery-card group">
-                    <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 1" />
+                    <img src="https://images.unsplash.com/photo-1577061674214-7b59090e0970?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 1" />
                     <div class="gallery-overlay"><h3>Project Alpha</h3></div>
                 </div>
                 </li>
                 <li>
                 <div class="gallery-card group">
-                    <img src="https://images.unsplash.com/photo-1521170665346-3f21e2291d8b?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 2" />
+                    <img src="https://images.unsplash.com/photo-1666172154964-263f9eae3df0?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 2" />
                     <div class="gallery-overlay"><h3>Brand Identity</h3></div>
                 </div>
                 </li>
                 <li>
                 <div class="gallery-card group">
-                    <img src="https://images.unsplash.com/photo-1523246205-1c1a1fd0d048?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 3" />
+                    <img src="https://images.unsplash.com/photo-1695209510254-53800893eb49?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 3" />
                     <div class="gallery-overlay"><h3>Web Platform</h3></div>
                 </div>
                 </li>
                 <li>
                 <div class="gallery-card group">
-                    <img src="https://images.unsplash.com/photo-1526401485004-2fda9f4e2d93?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 4" />
+                    <img src="https://images.unsplash.com/photo-1696846311707-792070142094?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 4" />
                     <div class="gallery-overlay"><h3>Mobile App</h3></div>
                 </div>
                 </li>
                 <li>
                 <div class="gallery-card group">
-                    <img src="https://images.unsplash.com/photo-1520975922325-24b69be8492b?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 5" />
+                    <img src="https://images.unsplash.com/photo-1683226597307-b89d50f7f266?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 5" />
                     <div class="gallery-overlay"><h3>Digital Campaign</h3></div>
                 </div>
                 </li>
                 <li>
                 <div class="gallery-card group">
-                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 6" />
+                    <img src="https://images.unsplash.com/photo-1554279411-83b69a24b5c7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 6" />
                     <div class="gallery-overlay"><h3>E-commerce Solution</h3></div>
                 </div>
                 </li>
@@ -1108,7 +813,7 @@
                           <p class="text-slate-500 text-sm">Software Engineer</p>
                         </div>
                       </div>
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Logo_2018.svg/100px-Google_Logo_2018.svg.png" alt="Google Logo" class="h-8 opacity-70">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" class="h-8 opacity-70">
                     </div>
                   </div>
                 </div>
@@ -1128,7 +833,7 @@
                           <p class="text-slate-500 text-sm">Product Manager</p>
                         </div>
                       </div>
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Logo_2018.svg/100px-Google_Logo_2018.svg.png" alt="Google Logo" class="h-8 opacity-70">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" class="h-8 opacity-70">
                     </div>
                   </div>
                 </div>
@@ -1148,7 +853,7 @@
                           <p class="text-slate-500 text-sm">Marketing Specialist</p>
                         </div>
                       </div>
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Logo_2018.svg/100px-Google_Logo_2018.svg.png" alt="Google Logo" class="h-8 opacity-70">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" class="h-8 opacity-70">
                     </div>
                   </div>
                 </div>
@@ -1168,7 +873,7 @@
                           <p class="text-slate-500 text-sm">Architect</p>
                         </div>
                       </div>
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Logo_2018.svg/100px-Google_Logo_2018.svg.png" alt="Google Logo" class="h-8 opacity-70">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" class="h-8 opacity-70">
                     </div>
                   </div>
                 </div>
@@ -1297,10 +1002,10 @@
 
     </div>
   </div>
-</section>
+    </section>
 
       <!-- CTA -->
-      <section id="cta" class="relative mt-24 max-w-5xl mx-auto">
+      <section id="cta" class="relative mt-24 mb-24 max-w-5xl mx-auto">
         <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-primary/0 to-transparent"></div>
         <div class="container mx-auto px-6">
           <div class="overflow-hidden rounded-2xl p-10 md:p-14 bg-gradient-to-br from-primary to-amber-700 text-white shadow-glow">
@@ -1332,8 +1037,7 @@
       
       <div class="space-y-4">
         <a href="#" class="inline-flex items-center gap-2">
-          <span class="inline-block h-8 w-8 rounded-lg bg-primary shadow-glow"></span>
-          <span class="font-heading text-xl text-white">Aurelia</span>
+      <img class="w-1/3" src="img/logo.png" alt="">
         </a>
         <p class="text-slate-400 max-w-xs">
           Crafting modern digital experiences with elegant details and performance-first builds.
@@ -1386,7 +1090,7 @@
     </div>
 
     <div class="mt-16 pt-8 border-t border-slate-700 text-center sm:text-left sm:flex sm:justify-between text-slate-400 text-sm">
-      <p>&copy; <span id="footerYear"></span> Aurelia. All Rights Reserved.</p>
+      <p>&copy; <span id="footerYear"></span> Stonebridge Legal. All Rights Reserved.</p>
       <div class="mt-4 sm:mt-0 space-x-6">
         <a href="#" class="footer-link">Privacy Policy</a>
         <a href="#" class="footer-link">Terms of Service</a>
@@ -1395,297 +1099,49 @@
   </div>
 </footer>
 
-<style>
-  .footer-link {
-    @apply text-slate-400 hover:text-primary transition-colors;
-  }
-  .social-link-footer {
-    @apply h-10 w-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-primary hover:text-white transition-all;
-  }
-</style>
+<!-- social media icon -->
 
-<script>
-  // ফুটারের বছর স্বয়ংক্রিয়ভাবে আপডেট করার জন্য
-  const footerYearEl = document.getElementById('footerYear');
-  if (footerYearEl) {
-    footerYearEl.textContent = new Date().getFullYear();
-  }
-</script>
+<div class="fixed bottom-8 right-8 z-50">
+  <div class="flex flex-col gap-4">
+
+    <a href="#" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer" 
+       class="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform duration-200 ease-in-out"
+       style="background-color: #25D366;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.451-4.437-9.884-9.888-9.884-5.452 0-9.885 4.434-9.888 9.884.001 2.228.651 4.39 1.849 6.22l-1.072 3.912 3.912-1.074z"/>
+      </svg>
+    </a>
+
+    <a href="#" aria-label="Follow on Facebook" target="_blank" rel="noopener noreferrer"
+       class="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform duration-200 ease-in-out"
+       style="background-color: #1877F2;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+    </a>
+    
+    <a href="#" aria-label="Follow on Twitter" target="_blank" rel="noopener noreferrer"
+       class="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform duration-200 ease-in-out"
+       style="background-color: #14171A;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 2.9,4.79C2.53,5.42 2.33,6.16 2.33,6.94C2.33,8.43 3.1,9.78 4.22,10.59C3.47,10.57 2.78,10.36 2.17,10.03C2.17,10.05 2.17,10.07 2.17,10.08C2.17,12.19 3.65,13.95 5.6,14.34C5.24,14.44 4.86,14.5 4.47,14.5C4.2,14.5 3.93,14.47 3.67,14.42C4.22,16.14 5.8,17.38 7.69,17.42C6.23,18.55 4.41,19.23 2.42,19.23C2.08,19.23 1.75,19.21 1.42,19.16C3.34,20.43 5.65,21.23 8.13,21.23C16,21.23 20.33,14.41 20.33,8.79C20.33,8.62 20.33,8.45 20.32,8.28C21.17,7.69 21.89,6.9 22.46,6Z"/>
+      </svg>
+    </a>
+    
+    <a href="#" aria-label="Subscribe on YouTube" target="_blank" rel="noopener noreferrer"
+       class="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform duration-200 ease-in-out"
+       style="background-color: #FF0000;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+    </a>
+
+  </div>
+</div>
+
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
-      // Mobile menu
-      const menuBtn = document.getElementById('menuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-      // Scroll progress
-      const progressBar = document.getElementById('progressBar');
-      window.addEventListener('scroll', () => {
-        const h = document.documentElement; const p = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100; progressBar.style.width = p + '%';
-      });
-
-
-       // Hero Video Player Logic
-   // Hero Video Player Logic
-  const heroPlayBtn = document.getElementById('heroPlayBtn');
-  const heroVideoFrame = document.getElementById('heroVideoFrame');
-  const heroVideoPoster = document.getElementById('heroVideoPoster');
-
-  if (heroPlayBtn) {
-    heroPlayBtn.addEventListener('click', () => {
-      // আপনার দেওয়া নতুন ভিডিও লিঙ্কটি এখানে যুক্ত করা হয়েছে
-      heroVideoFrame.src = 'https://www.youtube.com/embed/1ucLq6JTxac?autoplay=1&rel=0&showinfo=0&modestbranding=1';
-      heroVideoPoster.classList.add('opacity-0');
-      heroPlayBtn.classList.add('opacity-0', 'pointer-events-none');
-      
-      setTimeout(() => {
-        if(heroVideoPoster) heroVideoPoster.remove();
-        if(heroPlayBtn) heroPlayBtn.remove();
-      }, 500);
-    });
-  }
-
-
-//  about 
-
-let currentSlide = 0;
-  const carouselImages = document.querySelectorAll('.carousel-image');
-  const carouselIndicators = document.querySelectorAll('.carousel-indicator');
-  
-  if (carouselImages.length > 0) {
-    const totalSlides = carouselImages.length;
-
-    function showSlide(index) {
-      carouselImages.forEach((img, i) => {
-        img.classList.remove('active', 'opacity-100');
-        img.classList.add('opacity-0');
-        if (i === index) {
-          img.classList.add('active', 'opacity-100');
-        }
-      });
-
-      carouselIndicators.forEach((indicator, i) => {
-        indicator.classList.remove('active-indicator', 'bg-primary');
-        indicator.classList.add('bg-slate-300');
-        if (i === index) {
-          indicator.classList.add('active-indicator', 'bg-primary');
-          indicator.classList.remove('bg-slate-300');
-        }
-      });
-    }
-
-    function changeSlide(direction) {
-      currentSlide += direction;
-      if (currentSlide >= totalSlides) {
-        currentSlide = 0;
-      } else if (currentSlide < 0) {
-        currentSlide = totalSlides - 1;
-      }
-      showSlide(currentSlide);
-    }
-    
-    // Initial display
-    showSlide(currentSlide);
-    
-    // Auto-advance slides every 5 seconds
-    setInterval(() => {
-      changeSlide(1);
-    }, 5000);
-  }
-
-
-//   why choose us
-
-
-const tabs = document.querySelectorAll('.w-choose-us-tab');
-  const panels = document.querySelectorAll('.w-choose-us-panel');
-
-  const activateTab = (tab) => {
-    // Deactivate all tabs and panels
-    tabs.forEach(t => {
-      t.setAttribute('aria-selected', 'false');
-      t.classList.remove('active');
-    });
-    panels.forEach(p => p.classList.add('hidden'));
-
-    // Activate the clicked tab and its corresponding panel
-    tab.setAttribute('aria-selected', 'true');
-    tab.classList.add('active');
-    const targetPanelId = tab.getAttribute('data-tab-target');
-    const targetPanel = document.getElementById(targetPanelId);
-    if (targetPanel) {
-      targetPanel.classList.remove('hidden');
-    }
-  };
-  
-  // Set the first tab as active by default
-  if (tabs.length > 0) {
-      activateTab(tabs[0]);
-  }
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      activateTab(tab);
-    });
-  });
-
-
-    const scrollers = document.querySelectorAll(".scroller");
-
-  if (scrollers.length > 0 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    addAnimation();
-  }
-
-  function addAnimation() {
-    scrollers.forEach((scroller) => {
-      if (scroller.getAttribute("data-animated")) return; // Prevent re-running the animation setup
-
-      scroller.setAttribute("data-animated", true);
-      const scrollerInner = scroller.querySelector(".scroller__inner");
-      const scrollerContent = Array.from(scrollerInner.children);
-
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        duplicatedItem.setAttribute("aria-hidden", true);
-        scrollerInner.appendChild(duplicatedItem);
-      });
-    });
-  }
-
-
-
-    // ভিডিও মডাল এর জন্য JavaScript
-  const videoCardContainers = document.querySelectorAll('.video-card-container');
-  const modal = document.getElementById('videoModal');
-  const closeModalBtn = document.getElementById('closeModal');
-  const player = document.getElementById('youtubePlayer');
-
-  if (modal) {
-    videoCardContainers.forEach(card => {
-      card.addEventListener('click', () => {
-        const videoId = card.getAttribute('data-video-id');
-        player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-        modal.classList.remove('hidden');
-      });
-    });
-
-    const closeModal = () => {
-      modal.classList.add('hidden');
-      player.src = '';
-    };
-
-    closeModalBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeModal();
-      }
-    });
-  }
-
-
-
-   const carouselWrapper = document.getElementById('testimonialCarouselWrapper');
-  const carousel = document.getElementById('testimonialCarousel');
-  const prevBtn = document.getElementById('prevTestimonial');
-  const nextBtn = document.getElementById('nextTestimonial');
-  const dotsContainer = document.getElementById('testimonialDots');
-  const testimonialCards = document.querySelectorAll('.testimonial-card');
-  let slideIndex = 0;
-  let autoSlideInterval;
-
-  const getCardsPerPage = () => {
-    return window.innerWidth >= 768 ? 2 : 1;
-  };
-
-  const updateCarousel = () => {
-    const cardsPerPage = getCardsPerPage();
-    const slideWidth = carouselWrapper.offsetWidth / cardsPerPage * cardsPerPage; // Get the full width of one slide (e.g., 2 cards)
-    carousel.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
-    updateDots();
-  };
-
-  const createDots = () => {
-    dotsContainer.innerHTML = '';
-    const cardsPerPage = getCardsPerPage();
-    const numSlides = Math.ceil(testimonialCards.length / cardsPerPage);
-
-    for (let i = 0; i < numSlides; i++) {
-      const dot = document.createElement('span');
-      dot.classList.add('testimonial-dot');
-      if (i === slideIndex) {
-        dot.classList.add('active');
-      }
-      dot.addEventListener('click', () => {
-        slideIndex = i;
-        updateCarousel();
-      });
-      dotsContainer.appendChild(dot);
-    }
-  };
-
-  const updateDots = () => {
-    const dots = dotsContainer.querySelectorAll('.testimonial-dot');
-    dots.forEach((dot, index) => {
-      dot.classList.remove('active');
-      if (index === slideIndex) {
-        dot.classList.add('active');
-      }
-    });
-  };
-  
-  const handleNext = () => {
-    const cardsPerPage = getCardsPerPage();
-    const numSlides = Math.ceil(testimonialCards.length / cardsPerPage);
-    if (slideIndex < numSlides - 1) {
-      slideIndex++;
-    } else {
-      slideIndex = 0; // Loop to beginning
-    }
-    updateCarousel();
-  };
-
-  const handlePrev = () => {
-    const cardsPerPage = getCardsPerPage();
-    const numSlides = Math.ceil(testimonialCards.length / cardsPerPage);
-    if (slideIndex > 0) {
-      slideIndex--;
-    } else {
-      slideIndex = numSlides - 1; // Loop to end
-    }
-    updateCarousel();
-  };
-
-  const startAutoSlide = () => {
-    stopAutoSlide();
-    autoSlideInterval = setInterval(handleNext, 5000);
-  };
-  
-  const stopAutoSlide = () => {
-    clearInterval(autoSlideInterval);
-  };
-
-  prevBtn.addEventListener('click', () => { stopAutoSlide(); handlePrev(); startAutoSlide(); });
-  nextBtn.addEventListener('click', () => { stopAutoSlide(); handleNext(); startAutoSlide(); });
-  
-  if(carouselWrapper) {
-    carouselWrapper.addEventListener('mouseenter', stopAutoSlide);
-    carouselWrapper.addEventListener('mouseleave', startAutoSlide);
-  }
-  
-  window.addEventListener('resize', () => {
-    slideIndex = 0;
-    createDots();
-    updateCarousel();
-    startAutoSlide();
-  });
-
-  // Initial setup
-  createDots();
-  updateCarousel();
-  startAutoSlide();
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>

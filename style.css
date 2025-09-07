@@ -1,0 +1,323 @@
+
+      .glass{background:rgba(255,255,255,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(15,23,42,.08)}
+      .btn-premium{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:.75rem 1.25rem;border-radius:.5rem;background-image:linear-gradient(to bottom right,#87550D,#9e6b1a);color:#fff;box-shadow:0 12px 36px -10px rgba(0,0,0,.2)}
+      .btn-premium:hover{transform:translateY(-2px);box-shadow:0 18px 48px -12px rgba(0,0,0,.28)}
+      .btn-premium::before{content:"";position:absolute;inset:-150% auto auto -40%;width:30%;height:200%;background:linear-gradient(120deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.25) 50%,rgba(255,255,255,0) 100%);transform:rotate(25deg);transition:transform .6s ease}
+      .btn-premium:hover::before{transform:translateX(260%) rotate(25deg)}
+      .card-premium{border-radius:.75rem;border:1px solid rgba(15,23,42,.08);background:rgba(255,255,255,.7);backdrop-filter:blur(16px);box-shadow:0 6px 24px -8px rgba(0,0,0,.15);transition:box-shadow .25s,transform .25s}
+      .card-premium:hover{box-shadow:0 18px 48px -12px rgba(0,0,0,.28)}
+      .noise{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.05;mix-blend:multiply}
+
+      /* Existing styles are kept from the previous response for context */
+  @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
+  @keyframes float-fast { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  .animate-float-fast { animation: float-fast 5s ease-in-out infinite; }
+
+
+  /* why choose us */
+
+    /* Tab Styles */
+  .w-choose-us-tab {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: #475569; /* slate-600 */
+  }
+  .w-choose-us-tab div {
+    background-color: #f1f5f9; /* slate-100 */
+    color: #475569; /* slate-600 */
+    transition: all 0.3s;
+  }
+  .w-choose-us-tab:hover div {
+    background-color: #fde68a; /* amber-200 */
+    color: var(--tw-color-primary, #87550D);
+  }
+  .w-choose-us-tab.active {
+    background-color: #fff;
+    border-color: #e2e8f0; /* slate-200 */
+    box-shadow: 0 6px 24px -8px rgba(0,0,0,.15); /* shadow-soft-1 */
+    color: var(--tw-color-primary, #87550D);
+  }
+  .w-choose-us-tab.active div {
+    background-color: var(--tw-color-primary, #87550D);
+    color: #fff;
+    box-shadow: 0 0 0 2px rgba(135,85,13,.2), 0 12px 40px -6px rgba(135,85,13,.35); /* shadow-glow */
+  }
+
+  /* Panel Animation */
+  .w-choose-us-panel {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* image */
+
+    .scroller {
+    /* max-width is now controlled by the container, so this is not strictly needed but good for fallback */
+    max-width: 100%; 
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  }
+
+  .scroller__inner {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding-block: 1rem;
+    animation: scroll 40s linear infinite;
+  }
+  
+  .scroller:hover .scroller__inner {
+      animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+
+  .tag-list {
+    margin: 0;
+    padding-inline: 0;
+    list-style: none;
+  }
+  
+  .gallery-card {
+      position: relative;
+      width: 350px;
+      height: 220px;
+      border-radius: 0.75rem; /* rounded-xl */
+      overflow: hidden;
+      box-shadow: 0 6px 24px -8px rgba(0,0,0,.15); /* shadow-soft-1 */
+      border: 1px solid rgba(15,23,42,.08);
+      transition: all 0.3s ease;
+  }
+  
+  .gallery-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 18px 48px -12px rgba(0,0,0,.28); /* shadow-soft-3 */
+  }
+
+  .gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-card:hover img {
+      transform: scale(1.05);
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .gallery-card:hover .gallery-overlay {
+      opacity: 1;
+  }
+  
+  .gallery-overlay h3 {
+      font-family: 'Merriweather', serif; /* font-heading */
+      font-size: 1.25rem; /* text-xl */
+      transform: translateY(10px);
+      transition: transform 0.3s ease;
+  }
+  
+  .gallery-card:hover .gallery-overlay h3 {
+      transform: translateY(0);
+  }
+
+  /* videos */
+
+    .video-card-container {
+    position: relative;
+    border-radius: 0.75rem; /* 12px */
+    padding: 2px; /* Border thickness */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .video-card-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 48px -12px rgba(0,0,0,.28);
+  }
+  /* Rotating background for the border effect */
+  .video-card-container::before {
+    content: '';
+    position: absolute;
+    inset: -200%;
+    z-index: 1;
+    background: conic-gradient(
+      from 90deg,
+      transparent 50%,
+      var(--tw-color-primary, #87550D),
+      transparent
+    );
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .video-card-container:hover::before {
+    opacity: 1;
+    animation: spin 3s linear infinite;
+  }
+  /* The actual content that masks the rotating background */
+  .video-card-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,.7);
+    border-radius: 0.65rem; /* Slightly smaller than container */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Modal Styles */
+  .video-modal-container {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+  }
+  .video-modal-container:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* team */
+
+   .team-card {
+    position: relative;
+    border-radius: 0.75rem; /* 12px */
+    padding: 2px; /* Border thickness */
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+    overflow: hidden; /* Hide the glowing border when it's outside */
+  }
+  .team-card:hover {
+    transform: translateY(-8px); /* More pronounced lift */
+    box-shadow: 0 20px 50px -10px rgba(0,0,0,.35); /* Stronger shadow */
+  }
+  /* Glowing Border Effect */
+  .team-card::before {
+    content: '';
+    position: absolute;
+    inset: -200%; /* Make the background large enough to rotate fully */
+    z-index: 1;
+    background: conic-gradient(
+      from 90deg at 50% 50%,
+      transparent 50%,
+      var(--tw-color-primary, #87550D) 60%, /* Start of glow */
+      var(--tw-color-primary-light, #BA863A) 70%, /* Brighter part of glow */
+      transparent 80% /* End of glow */
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  }
+  .team-card:hover::before {
+    opacity: 0.8; /* Slight opacity for a subtle glow */
+    animation: rotate-glow 4s linear infinite;
+  }
+  @keyframes rotate-glow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Inner content container to mask the rotating glow */
+  .team-card-inner {
+    position: relative;
+    z-index: 2; /* Ensures content is above the glow */
+    background: rgba(255, 255, 255, 0.9); /* Slightly more opaque for content clarity */
+    border-radius: 0.65rem; /* Slightly smaller than container */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 6px 24px -8px rgba(0,0,0,.15); /* Soft inner shadow */
+    border: 1px solid rgba(15,23,42,.08); /* Subtle inner border */
+    transition: background-color 0.3s ease;
+  }
+  .team-card:hover .team-card-inner {
+      background: rgba(255, 255, 255, 1); /* Fully opaque on hover */
+  }
+
+  .social-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 60px; /* Fixed width for the panel */
+    background: hsla(var(--tw-color-primary-hsl, 35 81% 29%) / 0.95); /* Slightly darker for contrast */
+    backdrop-filter: blur(5px); /* Stronger blur */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem; /* Increased gap */
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Smoother animation */
+    z-index: 3; /* Ensure it's above other elements */
+    border-top-right-radius: 0.65rem;
+    border-bottom-right-radius: 0.65rem;
+  }
+  .team-card:hover .social-panel {
+    transform: translateX(0);
+  }
+  .social-link {
+    color: white;
+    padding: 0.6rem; /* Larger hit area */
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background */
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  .social-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1); /* Pop effect on hover */
+  }
+
+    .testimonial-card > div {
+    border: 1px solid rgba(15,23,42,.08);
+    box-shadow: 0 6px 24px -8px rgba(0,0,0,.05);
+    transition: all 0.3s ease;
+  }
+  .testimonial-card:hover > div {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 36px -10px rgba(0,0,0,.1);
+  }
+  .testimonial-dot {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+    background-color: #cbd5e1;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .testimonial-dot.active {
+    background-color: var(--tw-color-primary, #87550D);
+  }
+
+  /* footer */
+
+   .footer-link {
+    @apply text-slate-400 hover:text-primary transition-colors;
+  }
+  .social-link-footer {
+    @apply h-10 w-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-primary hover:text-white transition-all;
+  }
