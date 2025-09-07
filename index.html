@@ -46,6 +46,45 @@
   .animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
   @keyframes float-fast { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
   .animate-float-fast { animation: float-fast 5s ease-in-out infinite; }
+
+
+  /* why choose us */
+
+    /* Tab Styles */
+  .w-choose-us-tab {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: #475569; /* slate-600 */
+  }
+  .w-choose-us-tab div {
+    background-color: #f1f5f9; /* slate-100 */
+    color: #475569; /* slate-600 */
+    transition: all 0.3s;
+  }
+  .w-choose-us-tab:hover div {
+    background-color: #fde68a; /* amber-200 */
+    color: var(--tw-color-primary, #87550D);
+  }
+  .w-choose-us-tab.active {
+    background-color: #fff;
+    border-color: #e2e8f0; /* slate-200 */
+    box-shadow: 0 6px 24px -8px rgba(0,0,0,.15); /* shadow-soft-1 */
+    color: var(--tw-color-primary, #87550D);
+  }
+  .w-choose-us-tab.active div {
+    background-color: var(--tw-color-primary, #87550D);
+    color: #fff;
+    box-shadow: 0 0 0 2px rgba(135,85,13,.2), 0 12px 40px -6px rgba(135,85,13,.35); /* shadow-glow */
+  }
+
+  /* Panel Animation */
+  .w-choose-us-panel {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
     </style>
   </head>
   <body class="bg-white text-slate-900 font-body antialiased selection:bg-primary/20 selection:text-primary">
@@ -253,212 +292,255 @@
 
       <!-- Services -->
 
-    <section id="services" class="relative py-24 overflow-hidden">
-    
-    <div aria-hidden="true" class="absolute inset-0 z-0 opacity-60">
-        <svg class="absolute top-0 left-0 w-full h-auto" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <path d="M0 200C0 200 360 400 720 200C1080 0 1440 200 1440 200V900H0V200Z" fill="url(#paint0_linear_wave_services)" />
-        <path d="M0 150C0 150 360 300 720 150C1080 0 1440 150 1440 150V900H0V150Z" fill="url(#paint1_linear_wave_services)" style="mix-blend-mode: overlay" />
-        <defs>
-            <linearGradient id="paint0_linear_wave_services" x1="720" y1="0" x2="720" y2="900" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#87550D" stop-opacity="0.05" />
-            <stop offset="1" stop-color="#87550D" stop-opacity="0" />
-            </linearGradient>
-            <linearGradient id="paint1_linear_wave_services" x1="720" y1="0" x2="720" y2="900" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#87550D" stop-opacity="0.1" />
-            <stop offset="1" stop-color="#87550D" stop-opacity="0" />
-            </linearGradient>
-        </defs>
-        </svg>
-    </div>
-
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center mb-16">
-        <h3 class="font-heading text-lg font-semibold text-primary tracking-widest uppercase mb-2" data-aos="fade-up">Our Services</h3>
-        <h2 class="font-heading text-4xl md:text-5xl text-slate-900 leading-tight mb-4" data-aos="fade-up" data-aos-delay="100">Complete Immigration Services</h2>
-        <p class="text-slate-600 max-w-2xl mx-auto text-lg" data-aos="fade-up" data-aos-delay="200">
-            From sponsorship licenses to visa applications, we handle every aspect of your immigration needs.
-        <p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-8xl mx-auto">
+        <section id="services" class="relative py-24 overflow-hidden">
         
-            <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="font-heading text-xl text-slate-800 mb-4">Sponsorship Licence</h3>
-                <div class="flex items-center gap-4">
-                    <div class="h-16 w-16 bg-blue-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-blue-200 shrink-0">
-                    <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163212_1001920894_2.png" alt="Sponsorship Licence Icon" class="h-full w-full object-contain" />
-                    </div>
-                    <ul class="space-y-2 text-slate-700">
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Sponsor Licence Application</a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Sponsor Licence Renewal</a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Licence Suspension Support</a>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="400">
-                <h3 class="font-heading text-xl text-slate-800 mb-4">Immigration Compliance</h3>
-                <div class="flex items-center gap-4">
-                    <div class="h-16 w-16 bg-green-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-green-200 shrink-0">
-                    <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163628_1001920894_10.png" alt="Immigration Compliance Icon" class="h-full w-full object-contain" />
-                    </div>
-                    <ul class="space-y-2 text-slate-700">
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Civil Penalty Appeals</a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Right to Work Checks</a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">HO Compliance Visit</a>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="500">
-                <h3 class="font-heading text-xl text-slate-800 mb-4">Skilled Worker Visas</h3>
-                <div class="flex items-center gap-4">
-                    <div class="h-16 w-16 bg-orange-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-orange-200 shrink-0">
-                    <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163720_1001920894_12.png" alt="Skilled Worker Visas Icon" class="h-full w-full object-contain" />
-                    </div>
-                    <ul class="space-y-2 text-slate-700">
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Skilled Worker Visa</a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Health & Care Visa</a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Minister of Religion Visa</a>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="font-heading text-xl text-slate-800 mb-4">Sponsorship Licence</h3>
-                <div class="flex items-center gap-4">
-                    <div class="h-16 w-16 bg-blue-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-blue-200 shrink-0">
-                    <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163212_1001920894_2.png" alt="Sponsorship Licence Icon" class="h-full w-full object-contain" />
-                    </div>
-                    <ul class="space-y-2 text-slate-700">
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Sponsor Licence Application</a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Sponsor Licence Renewal</a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Licence Suspension Support</a>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="400">
-                <h3 class="font-heading text-xl text-slate-800 mb-4">Immigration Compliance</h3>
-                <div class="flex items-center gap-4">
-                    <div class="h-16 w-16 bg-green-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-green-200 shrink-0">
-                    <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163628_1001920894_10.png" alt="Immigration Compliance Icon" class="h-full w-full object-contain" />
-                    </div>
-                    <ul class="space-y-2 text-slate-700">
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Civil Penalty Appeals</a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Right to Work Checks</a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">HO Compliance Visit</a>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="500">
-                <h3 class="font-heading text-xl text-slate-800 mb-4">Skilled Worker Visas</h3>
-                <div class="flex items-center gap-4">
-                    <div class="h-16 w-16 bg-orange-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-orange-200 shrink-0">
-                    <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163720_1001920894_12.png" alt="Skilled Worker Visas Icon" class="h-full w-full object-contain" />
-                    </div>
-                    <ul class="space-y-2 text-slate-700">
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Skilled Worker Visa</a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Health & Care Visa</a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <a href="#" class="hover:text-primary transition-colors">Minister of Religion Visa</a>
-                    </li>
-                    </ul>
-                </div>
-            </div>
+        <div aria-hidden="true" class="absolute inset-0 z-0 opacity-60">
+            <svg class="absolute top-0 left-0 w-full h-auto" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <path d="M0 200C0 200 360 400 720 200C1080 0 1440 200 1440 200V900H0V200Z" fill="url(#paint0_linear_wave_services)" />
+            <path d="M0 150C0 150 360 300 720 150C1080 0 1440 150 1440 150V900H0V150Z" fill="url(#paint1_linear_wave_services)" style="mix-blend-mode: overlay" />
+            <defs>
+                <linearGradient id="paint0_linear_wave_services" x1="720" y1="0" x2="720" y2="900" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#87550D" stop-opacity="0.05" />
+                <stop offset="1" stop-color="#87550D" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient id="paint1_linear_wave_services" x1="720" y1="0" x2="720" y2="900" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#87550D" stop-opacity="0.1" />
+                <stop offset="1" stop-color="#87550D" stop-opacity="0" />
+                </linearGradient>
+            </defs>
+            </svg>
         </div>
 
-        <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="600">
-        <a href="#all-services" class="btn-premium px-8 py-4 text-lg rounded-md transform hover:-translate-y-1 transition-transform duration-300 ease-out inline-block">
-            View All Our Services
-        </a>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+            <h3 class="font-heading text-lg font-semibold text-primary tracking-widest uppercase mb-2" data-aos="fade-up">Our Services</h3>
+            <h2 class="font-heading text-3xl md:text-4xl text-slate-900 leading-tight mb-4" data-aos="fade-up" data-aos-delay="100">Complete Immigration Services</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto text-lg" data-aos="fade-up" data-aos-delay="200">
+                From sponsorship licenses to visa applications, we handle every aspect of your immigration needs.
+            <p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-8xl mx-auto">
+            
+                <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="font-heading text-xl text-slate-800 mb-4">Sponsorship Licence</h3>
+                    <div class="flex items-center gap-4">
+                        <div class="h-16 w-16 bg-blue-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-blue-200 shrink-0">
+                        <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163212_1001920894_2.png" alt="Sponsorship Licence Icon" class="h-full w-full object-contain" />
+                        </div>
+                        <ul class="space-y-2 text-slate-700">
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Sponsor Licence Application</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Sponsor Licence Renewal</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Licence Suspension Support</a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="font-heading text-xl text-slate-800 mb-4">Immigration Compliance</h3>
+                    <div class="flex items-center gap-4">
+                        <div class="h-16 w-16 bg-green-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-green-200 shrink-0">
+                        <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163628_1001920894_10.png" alt="Immigration Compliance Icon" class="h-full w-full object-contain" />
+                        </div>
+                        <ul class="space-y-2 text-slate-700">
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Civil Penalty Appeals</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Right to Work Checks</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">HO Compliance Visit</a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="font-heading text-xl text-slate-800 mb-4">Skilled Worker Visas</h3>
+                    <div class="flex items-center gap-4">
+                        <div class="h-16 w-16 bg-orange-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-orange-200 shrink-0">
+                        <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163720_1001920894_12.png" alt="Skilled Worker Visas Icon" class="h-full w-full object-contain" />
+                        </div>
+                        <ul class="space-y-2 text-slate-700">
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Skilled Worker Visa</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Health & Care Visa</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Minister of Religion Visa</a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="font-heading text-xl text-slate-800 mb-4">Sponsorship Licence</h3>
+                    <div class="flex items-center gap-4">
+                        <div class="h-16 w-16 bg-blue-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-blue-200 shrink-0">
+                        <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163212_1001920894_2.png" alt="Sponsorship Licence Icon" class="h-full w-full object-contain" />
+                        </div>
+                        <ul class="space-y-2 text-slate-700">
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Sponsor Licence Application</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Sponsor Licence Renewal</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Licence Suspension Support</a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="font-heading text-xl text-slate-800 mb-4">Immigration Compliance</h3>
+                    <div class="flex items-center gap-4">
+                        <div class="h-16 w-16 bg-green-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-green-200 shrink-0">
+                        <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163628_1001920894_10.png" alt="Immigration Compliance Icon" class="h-full w-full object-contain" />
+                        </div>
+                        <ul class="space-y-2 text-slate-700">
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Civil Penalty Appeals</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Right to Work Checks</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">HO Compliance Visit</a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-premium p-6" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="font-heading text-xl text-slate-800 mb-4">Skilled Worker Visas</h3>
+                    <div class="flex items-center gap-4">
+                        <div class="h-16 w-16 bg-orange-100 rounded-lg flex items-center justify-center p-2 shadow-sm ring-1 ring-orange-200 shrink-0">
+                        <img src="https://storage.googleapis.com/maker-studio-project-3ea8b/deforum_20240409163720_1001920894_12.png" alt="Skilled Worker Visas Icon" class="h-full w-full object-contain" />
+                        </div>
+                        <ul class="space-y-2 text-slate-700">
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Skilled Worker Visa</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Health & Care Visa</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="h-5 w-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <a href="#" class="hover:text-primary transition-colors">Minister of Religion Visa</a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="600">
+            <a href="#all-services" class="btn-premium px-8 py-4 text-lg rounded-md transform hover:-translate-y-1 transition-transform duration-300 ease-out inline-block">
+                View All Our Services
+            </a>
+            </div>
         </div>
-    </div>
-    </section>
+        </section>
 
 
 
 
 
       <!-- Why Us -->
-      <section id="why-us" class="container mx-auto px-6 mt-24">
-        <div class="grid gap-8 md:grid-cols-3" data-aos="fade-up">
-          <div class="card-premium p-6">
-            <div class="h-10 w-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-glow">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 11 24 9 17 15 20 24 12 19 4 24 7 15 0 9 9 11 12 2"></polygon></svg>
+        <section id="why-choose-us" class="py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+            <h3 class="font-heading text-lg font-semibold text-primary tracking-widest uppercase mb-2" data-aos="fade-up">Why Choose Us</h3>
+            <h2 class="font-heading text-3xl md:text-4xl text-slate-900 leading-tight" data-aos="fade-up" data-aos-delay="100">Your Trusted Partner for a Seamless Journey</h2>
+            <p class="text-slate-600 mt-4 text-lg" data-aos="fade-up" data-aos-delay="200">
+                We combine expertise, dedication, and a client-first approach to ensure your success. Experience the difference of working with a team that truly cares.
+            </p>
             </div>
-            <h3 class="font-heading mt-3 text-xl">Premium finish</h3>
-            <p class="text-sm text-slate-600 mt-1">Subtle motion, soft depth, and refined typography.</p>
-          </div>
-          <div class="card-premium p-6">
-            <div class="h-10 w-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-glow">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><path d="M8 2v20M16 2v20"></path></svg>
+
+            <div class="grid lg:grid-cols-3 gap-12 items-start" data-aos="fade-up" data-aos-delay="300">
+            
+            <div class="lg:col-span-1 space-y-4" role="tablist" aria-label="Why Choose Us Tabs">
+                <button role="tab" aria-selected="true" data-tab-target="expertise" class="w-choose-us-tab w-full flex items-center gap-4 p-4 rounded-lg text-left transition-all duration-300">
+                <div class="h-12 w-12 rounded-lg flex items-center justify-center text-2xl shrink-0">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 11 24 9 17 15 20 24 12 19 4 24 7 15 0 9 9 11 12 2"></polygon></svg>
+                </div>
+                <span class="font-heading text-lg">Unmatched Expertise</span>
+                </button>
+                <button role="tab" aria-selected="false" data-tab-target="approach" class="w-choose-us-tab w-full flex items-center gap-4 p-4 rounded-lg text-left transition-all duration-300">
+                <div class="h-12 w-12 rounded-lg flex items-center justify-center text-2xl shrink-0">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <span class="font-heading text-lg">Personalized Approach</span>
+                </button>
+                <button role="tab" aria-selected="false" data-tab-target="process" class="w-choose-us-tab w-full flex items-center gap-4 p-4 rounded-lg text-left transition-all duration-300">
+                <div class="h-12 w-12 rounded-lg flex items-center justify-center text-2xl shrink-0">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                </div>
+                <span class="font-heading text-lg">Transparent Process</span>
+                </button>
             </div>
-            <h3 class="font-heading mt-3 text-xl">Performance-first</h3>
-            <p class="text-sm text-slate-600 mt-1">Ship fast experiences without compromising aesthetics.</p>
-          </div>
-          <div class="card-premium p-6">
-            <div class="h-10 w-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-glow">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+
+            <div class="lg:col-span-2">
+                <div role="tabpanel" id="expertise" class="w-choose-us-panel">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                    <h4 class="font-heading text-2xl text-slate-800">Expertise That Drives Results</h4>
+                    <p class="text-slate-600">Our team comprises industry veterans with years of proven experience, ensuring that your project is handled with the highest level of professionalism and skill. We stay ahead of trends to deliver cutting-edge solutions.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format=fit=crop" alt="Team Expertise" class="rounded-xl shadow-soft-2 w-full h-64 object-cover" />
+                </div>
+                </div>
+                <div role="tabpanel" id="approach" class="w-choose-us-panel hidden">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                    <h4 class="font-heading text-2xl text-slate-800">Solutions Tailored For You</h4>
+                    <p class="text-slate-600">We believe that one size does not fit all. We take the time to understand your unique needs and aspirations, crafting personalized solutions that align perfectly with your goals.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1600&auto=format&fit=crop" alt="Personalized Approach" class="rounded-xl shadow-soft-2 w-full h-64 object-cover" />
+                </div>
+                </div>
+                <div role="tabpanel" id="process" class="w-choose-us-panel hidden">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                    <h4 class="font-heading text-2xl text-slate-800">Clarity Every Step of the Way</h4>
+                    <p class="text-slate-600">We value clear communication and provide honest advice throughout the entire process. You will always be informed and in control, ensuring a smooth and predictable journey to success.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format=fit=crop" alt="Transparent Process" class="rounded-xl shadow-soft-2 w-full h-64 object-cover" />
+                </div>
+                </div>
             </div>
-            <h3 class="font-heading mt-3 text-xl">Trusted results</h3>
-            <p class="text-sm text-slate-600 mt-1">Proven outcomes across startups and enterprises.</p>
-          </div>
+            </div>
         </div>
-      </section>
+        </section>
+
+
+
 
       <!-- Gallery -->
       <section id="gallery" class="container mx-auto px-6 mt-24" data-aos="fade-up">
@@ -675,6 +757,42 @@ let currentSlide = 0;
       changeSlide(1);
     }, 5000);
   }
+
+
+//   why choose us
+
+
+const tabs = document.querySelectorAll('.w-choose-us-tab');
+  const panels = document.querySelectorAll('.w-choose-us-panel');
+
+  const activateTab = (tab) => {
+    // Deactivate all tabs and panels
+    tabs.forEach(t => {
+      t.setAttribute('aria-selected', 'false');
+      t.classList.remove('active');
+    });
+    panels.forEach(p => p.classList.add('hidden'));
+
+    // Activate the clicked tab and its corresponding panel
+    tab.setAttribute('aria-selected', 'true');
+    tab.classList.add('active');
+    const targetPanelId = tab.getAttribute('data-tab-target');
+    const targetPanel = document.getElementById(targetPanelId);
+    if (targetPanel) {
+      targetPanel.classList.remove('hidden');
+    }
+  };
+  
+  // Set the first tab as active by default
+  if (tabs.length > 0) {
+      activateTab(tabs[0]);
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      activateTab(tab);
+    });
+  });
     </script>
   </body>
 </html>
