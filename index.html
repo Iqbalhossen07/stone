@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aurelia — Premium Studio (Static)</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Merriweather:wght@700;800&display=swap" rel="stylesheet" />
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#87550D',
+            },
+            fontFamily: {
+              heading: ['Merriweather', 'serif'],
+              body: ['Lora', 'serif'],
+            },
+            boxShadow: {
+              'soft-1': '0 6px 24px -8px rgba(0,0,0,.15)',
+              'soft-2': '0 12px 36px -10px rgba(0,0,0,.20)',
+              'soft-3': '0 18px 48px -12px rgba(0,0,0,.28)',
+              glow: '0 0 0 2px rgba(135,85,13,.2), 0 12px 40px -6px rgba(135,85,13,.35)'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .glass{background:rgba(255,255,255,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(15,23,42,.08)}
+      .btn-premium{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:.75rem 1.25rem;border-radius:.5rem;background-image:linear-gradient(to bottom right,#87550D,#9e6b1a);color:#fff;box-shadow:0 12px 36px -10px rgba(0,0,0,.2)}
+      .btn-premium:hover{transform:translateY(-2px);box-shadow:0 18px 48px -12px rgba(0,0,0,.28)}
+      .btn-premium::before{content:"";position:absolute;inset:-150% auto auto -40%;width:30%;height:200%;background:linear-gradient(120deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.25) 50%,rgba(255,255,255,0) 100%);transform:rotate(25deg);transition:transform .6s ease}
+      .btn-premium:hover::before{transform:translateX(260%) rotate(25deg)}
+      .card-premium{border-radius:.75rem;border:1px solid rgba(15,23,42,.08);background:rgba(255,255,255,.7);backdrop-filter:blur(16px);box-shadow:0 6px 24px -8px rgba(0,0,0,.15);transition:box-shadow .25s,transform .25s}
+      .card-premium:hover{box-shadow:0 18px 48px -12px rgba(0,0,0,.28)}
+      .noise{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.05;mix-blend:multiply}
+    </style>
+  </head>
+  <body class="bg-white text-slate-900 font-body antialiased selection:bg-primary/20 selection:text-primary">
+    <!-- Background FX -->
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10">
+      <div class="absolute -top-32 -left-24 h-80 w-80 rounded-full blur-3xl opacity-50 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/25 via-primary/10 to-transparent"></div>
+      <div class="absolute top-40 -right-24 h-96 w-96 rounded-full blur-3xl opacity-40 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-400/20 via-amber-400/0 to-transparent"></div>
+      <div class="absolute inset-0 noise"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed inset-x-0 top-0 z-50">
+      <div class="hidden md:block text-sm py-2 text-slate-800/80">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+          <p class="opacity-70">Premium quality. Crafted with care.</p>
+          <div class="flex items-center gap-4">
+            <a href="#blog" class="hover:opacity-80 transition-opacity">Blog</a>
+            <a href="#cta" class="hover:opacity-80 transition-opacity">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div id="navWrap" class="transition-all bg-white/70 backdrop-blur-xl border-b shadow-soft-1">
+        <div class="h-0.5 bg-primary/30" id="progressBar" style="width:0%"></div>
+        <nav class="container mx-auto px-6 flex items-center justify-between py-4">
+          <a href="#" class="inline-flex items-center gap-2">
+            <span class="inline-block h-8 w-8 rounded-lg bg-primary shadow-glow"></span>
+            <span class="font-heading text-xl">Aurelia</span>
+          </a>
+          <ul class="hidden md:flex items-center gap-8">
+            <li><a href="#about" class="text-sm tracking-wide hover:text-primary transition-colors">About</a></li>
+            <li><a href="#services" class="text-sm tracking-wide hover:text-primary transition-colors">Services</a></li>
+            <li><a href="#why-us" class="text-sm tracking-wide hover:text-primary transition-colors">Why Us</a></li>
+            <li><a href="#gallery" class="text-sm tracking-wide hover:text-primary transition-colors">Gallery</a></li>
+            <li><a href="#team" class="text-sm tracking-wide hover:text-primary transition-colors">Team</a></li>
+            <li><a href="#blog" class="text-sm tracking-wide hover:text-primary transition-colors">Blog</a></li>
+            <li><a href="#cta" class="text-sm tracking-wide hover:text-primary transition-colors">Contact</a></li>
+          </ul>
+          <div class="hidden md:flex items-center gap-3">
+            <a href="#cta" class="btn-premium">Get Started</a>
+          </div>
+          <button id="menuBtn" class="md:hidden p-2 rounded-md border" aria-label="Toggle menu">☰</button>
+        </nav>
+        <div id="mobileMenu" class="hidden md:hidden border-t bg-white/80 backdrop-blur-xl">
+          <div class="container mx-auto px-6 py-4">
+            <ul class="grid gap-3">
+              <li><a href="#about" class="block px-3 py-2 rounded-md hover:bg-slate-100">About</a></li>
+              <li><a href="#services" class="block px-3 py-2 rounded-md hover:bg-slate-100">Services</a></li>
+              <li><a href="#why-us" class="block px-3 py-2 rounded-md hover:bg-slate-100">Why Us</a></li>
+              <li><a href="#gallery" class="block px-3 py-2 rounded-md hover:bg-slate-100">Gallery</a></li>
+              <li><a href="#team" class="block px-3 py-2 rounded-md hover:bg-slate-100">Team</a></li>
+              <li><a href="#blog" class="block px-3 py-2 rounded-md hover:bg-slate-100">Blog</a></li>
+              <li><a href="#cta" class="block text-center px-3 py-2 rounded-md bg-primary text-white">Get Started</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="relative pt-32 md:pt-40">
+        <div class="container mx-auto px-6 grid gap-12 lg:grid-cols-2 items-center">
+          <div data-aos="fade-up" class="space-y-6">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs border border-primary/20">Premium Design Studio</span>
+            <h1 class="font-heading text-4xl leading-tight md:text-5xl lg:text-6xl">Elevate Your Brand with Elegant Digital Experiences</h1>
+            <p class="text-slate-600 max-w-prose">We craft modern interfaces with smooth shadows, soft gradients, and seamless animations. Built to perform, designed to impress.</p>
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+              <a href="#cta" class="btn-premium">Get Started</a>
+              <a href="#services" class="inline-flex items-center justify-center px-5 py-3 rounded-md border hover:bg-slate-100">Our Services</a>
+            </div>
+          </div>
+          <div data-aos="fade-left" class="relative">
+            <div class="relative rounded-xl overflow-hidden shadow-xl shadow-black/20 ring-1 ring-black/10">
+              <div class="absolute left-3 top-3 z-10 rounded-full bg-black/70 text-white text-xs px-2 py-1 backdrop-blur-md">Ad • Trusted by 500+ brands</div>
+              <div class="aspect-video bg-black">
+                <iframe class="h-full w-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Promo video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Success Cards -->
+      <section class="container mx-auto px-6 mt-16" data-aos="fade-up">
+        <div class="grid gap-4 sm:grid-cols-3">
+          <div class="glass rounded-xl p-6 shadow-soft-2">
+            <div class="text-3xl font-heading">+320%</div>
+            <p class="text-slate-600 text-sm mt-1">Avg. conversion lift</p>
+          </div>
+          <div class="glass rounded-xl p-6 shadow-soft-2">
+            <div class="text-3xl font-heading">98%</div>
+            <p class="text-slate-600 text-sm mt-1">Client satisfaction</p>
+          </div>
+          <div class="glass rounded-xl p-6 shadow-soft-2">
+            <div class="text-3xl font-heading">500+</div>
+            <p class="text-slate-600 text-sm mt-1">Brands we’ve helped</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="container mx-auto px-6 mt-24 grid items-center gap-10 lg:grid-cols-2">
+        <div data-aos="fade-right" class="relative">
+          <div class="rounded-xl overflow-hidden shadow-soft-3 ring-1 ring-black/10">
+            <img id="aboutImg" src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1600&auto=format&fit=crop" alt="About gallery" class="h-[360px] w-full object-cover" />
+          </div>
+        </div>
+        <div data-aos="fade-left" class="space-y-5">
+          <h2 class="font-heading text-3xl md:text-4xl">Design that feels inevitable</h2>
+          <p class="text-slate-600 max-w-prose">We obsess over the tiny details so your brand feels effortless. From smooth shadows to subtle glassmorphism, every element is tuned for elegance.</p>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="glass rounded-lg p-5">
+              <h4 class="font-heading mb-1">Precision engineering</h4>
+              <p class="text-sm text-slate-600">Performance-first builds that scale gracefully.</p>
+            </div>
+            <div class="glass rounded-lg p-5">
+              <h4 class="font-heading mb-1">Timeless aesthetics</h4>
+              <p class="text-sm text-slate-600">Minimal, modern design that endures trends.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="container mx-auto px-6 mt-24">
+        <div class="text-center max-w-2xl mx-auto" data-aos="fade-up">
+          <h2 class="font-heading text-3xl md:text-4xl">Services</h2>
+          <p class="text-slate-600 mt-2">Crafted to elevate every touchpoint of your brand.</p>
+        </div>
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="group card-premium p-6 will-change-transform transform-gpu hover:-translate-y-1 hover:rotate-[0.2deg]" data-aos="zoom-in-up">
+            <div class="h-11 w-11 rounded-lg bg-primary/10 text-primary flex items-center justify-center shadow-glow">
+              <!-- Brush Icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.4 14.5a2 2 0 0 1-2.9 0L9.5 6.5 14 2l6.4 6.4a2 2 0 0 1 0 2.9z"></path><path d="M7 6l4 4"></path><path d="M2 20h7"></path><path d="M7 20a5 5 0 0 1-5-5"></path></svg>
+            </div>
+            <h3 class="font-heading mt-4 text-xl">Brand & UI Design</h3>
+            <p class="text-sm text-slate-600 mt-1">Soft gradients, smooth shadows, and premium visual systems.</p>
+          </div>
+          <div class="group card-premium p-6 will-change-transform transform-gpu hover:-translate-y-1 hover:rotate-[0.2deg]" data-aos="zoom-in-up">
+            <div class="h-11 w-11 rounded-lg bg-primary/10 text-primary flex items-center justify-center shadow-glow">
+              <!-- Monitor Smartphone Icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path><rect x="17" y="7" width="5" height="10" rx="1"></rect></svg>
+            </div>
+            <h3 class="font-heading mt-4 text-xl">Web & App Development</h3>
+            <p class="text-sm text-slate-600 mt-1">Fast, responsive, and accessible—built for scale.</p>
+          </div>
+          <div class="group card-premium p-6 will-change-transform transform-gpu hover:-translate-y-1 hover:rotate-[0.2deg]" data-aos="zoom-in-up">
+            <div class="h-11 w-11 rounded-lg bg-primary/10 text-primary flex items-center justify-center shadow-glow">
+              <!-- Rocket Icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15a7 7 0 0 1 9-9l1 1 3 3-1 1a7 7 0 0 1-9 9l-1-1-3-3 1-1z"></path><path d="M15 9l-6 6"></path><path d="M5 15l-2 5 5-2"></path></svg>
+            </div>
+            <h3 class="font-heading mt-4 text-xl">Growth & Optimization</h3>
+            <p class="text-sm text-slate-600 mt-1">A/B testing, analytics, and conversion-focused UX.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Us -->
+      <section id="why-us" class="container mx-auto px-6 mt-24">
+        <div class="grid gap-8 md:grid-cols-3" data-aos="fade-up">
+          <div class="card-premium p-6">
+            <div class="h-10 w-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-glow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 11 24 9 17 15 20 24 12 19 4 24 7 15 0 9 9 11 12 2"></polygon></svg>
+            </div>
+            <h3 class="font-heading mt-3 text-xl">Premium finish</h3>
+            <p class="text-sm text-slate-600 mt-1">Subtle motion, soft depth, and refined typography.</p>
+          </div>
+          <div class="card-premium p-6">
+            <div class="h-10 w-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-glow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><path d="M8 2v20M16 2v20"></path></svg>
+            </div>
+            <h3 class="font-heading mt-3 text-xl">Performance-first</h3>
+            <p class="text-sm text-slate-600 mt-1">Ship fast experiences without compromising aesthetics.</p>
+          </div>
+          <div class="card-premium p-6">
+            <div class="h-10 w-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-glow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            </div>
+            <h3 class="font-heading mt-3 text-xl">Trusted results</h3>
+            <p class="text-sm text-slate-600 mt-1">Proven outcomes across startups and enterprises.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section id="gallery" class="container mx-auto px-6 mt-24" data-aos="fade-up">
+        <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          <!-- 6 images -->
+          <div class="group overflow-hidden rounded-xl border relative"><img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=1600&auto=format&fit=crop" alt="Gallery 1" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:blur-[1px]" /><div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div>
+          <div class="group overflow-hidden rounded-xl border relative"><img src="https://images.unsplash.com/photo-1521170665346-3f21e2291d8b?q=80&w=1600&auto=format&fit=crop" alt="Gallery 2" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:blur-[1px]" /><div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div>
+          <div class="group overflow-hidden rounded-xl border relative"><img src="https://images.unsplash.com/photo-1523246205-1c1a1fd0d048?q=80&w=1600&auto=format&fit=crop" alt="Gallery 3" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:blur-[1px]" /><div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div>
+          <div class="group overflow-hidden rounded-xl border relative"><img src="https://images.unsplash.com/photo-1526401485004-2fda9f4e2d93?q=80&w=1600&auto=format&fit=crop" alt="Gallery 4" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:blur-[1px]" /><div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div>
+          <div class="group overflow-hidden rounded-xl border relative"><img src="https://images.unsplash.com/photo-1520975922325-24b69be8492b?q=80&w=1600&auto=format&fit=crop" alt="Gallery 5" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:blur-[1px]" /><div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div>
+          <div class="group overflow-hidden rounded-xl border relative"><img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop" alt="Gallery 6" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:blur-[1px]" /><div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div>
+        </div>
+      </section>
+
+      <!-- Video Section -->
+      <section class="container mx-auto px-6 mt-24" data-aos="zoom-in-up">
+        <div class="relative overflow-hidden rounded-2xl shadow-soft-3 ring-1 ring-black/10">
+          <button id="playOverlay" class="absolute inset-0 grid place-items-center bg-black/40 text-white"><span class="inline-flex items-center gap-3 rounded-full bg-white/10 px-5 py-3 backdrop-blur-xl border border-white/20"><span class="inline-block h-0 w-0 border-y-8 border-l-[14px] border-y-transparent border-l-white ml-1"></span><span class="font-heading">Watch video</span></span></button>
+          <div class="aspect-video bg-black">
+            <iframe id="videoFrame" class="h-full w-full" src="" title="Showreel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <img id="videoPoster" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop" alt="Video preview" class="h-full w-full object-cover absolute inset-0" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Team -->
+      <section id="team" class="container mx-auto px-6 mt-24">
+        <div class="text-center max-w-2xl mx-auto" data-aos="fade-up">
+          <h2 class="font-heading text-3xl md:text-4xl">Our Team</h2>
+          <p class="text-slate-600 mt-2">Small, senior, and relentlessly focused on quality.</p>
+        </div>
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="group rounded-xl overflow-hidden border bg-white/60 backdrop-blur-lg hover:shadow-soft-3 transition-shadow" data-aos="zoom-in">
+            <div class="h-64 overflow-hidden"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=800&auto=format&fit=crop" alt="Amelia Stone" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" /></div>
+            <div class="p-5"><h4 class="font-heading">Amelia Stone</h4><p class="text-sm text-slate-600">Creative Director</p></div>
+          </div>
+          <div class="group rounded-xl overflow-hidden border bg-white/60 backdrop-blur-lg hover:shadow-soft-3 transition-shadow" data-aos="zoom-in">
+            <div class="h-64 overflow-hidden"><img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=800&auto=format&fit=crop" alt="Liam Hart" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" /></div>
+            <div class="p-5"><h4 class="font-heading">Liam Hart</h4><p class="text-sm text-slate-600">Lead Engineer</p></div>
+          </div>
+          <div class="group rounded-xl overflow-hidden border bg-white/60 backdrop-blur-lg hover:shadow-soft-3 transition-shadow" data-aos="zoom-in">
+            <div class="h-64 overflow-hidden"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt="Noah Reed" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" /></div>
+            <div class="p-5"><h4 class="font-heading">Noah Reed</h4><p class="text-sm text-slate-600">Product Designer</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="container mx-auto px-6 mt-24" data-aos="fade-up">
+        <div class="relative overflow-hidden rounded-2xl border">
+          <div id="tWrap" class="flex transition-transform duration-700" style="transform:translateX(0%)">
+            <div class="shrink-0 basis-full grid place-items-center p-10 bg-gradient-to-br from-white to-slate-100"><div class="max-w-2xl text-center"><div class="text-amber-500">★★★★★</div><p class="mt-3 text-xl leading-relaxed">“They transformed our brand with a stunning, performant site.”</p><p class="mt-2 text-sm text-slate-600">— Sophia</p></div></div>
+            <div class="shrink-0 basis-full grid place-items-center p-10 bg-gradient-to-br from-white to-slate-100"><div class="max-w-2xl text-center"><div class="text-amber-500">★★★★★</div><p class="mt-3 text-xl leading-relaxed">“Attention to detail is unmatched. Our conversions skyrocketed.”</p><p class="mt-2 text-sm text-slate-600">— Ethan</p></div></div>
+            <div class="shrink-0 basis-full grid place-items-center p-10 bg-gradient-to-br from-white to-slate-100"><div class="max-w-2xl text-center"><div class="text-amber-500">★★★★★</div><p class="mt-3 text-xl leading-relaxed">“Elegant visuals with buttery-smooth interactions.”</p><p class="mt-2 text-sm text-slate-600">— Olivia</p></div></div>
+          </div>
+          <button id="tPrev" aria-label="Previous" class="absolute left-3 top-1/2 -translate-y-1/2 grid place-items-center h-9 w-9 rounded-full bg-white/80 backdrop-blur border hover:bg-slate-100">‹</button>
+          <button id="tNext" aria-label="Next" class="absolute right-3 top-1/2 -translate-y-1/2 grid place-items-center h-9 w-9 rounded-full bg-white/80 backdrop-blur border hover:bg-slate-100">›</button>
+          <div class="absolute inset-x-0 bottom-3 flex items-center justify-center gap-2">
+            <button class="dot h-2.5 w-2.5 rounded-full bg-slate-400" aria-label="Slide 1"></button>
+            <button class="dot h-2.5 w-2.5 rounded-full bg-slate-400" aria-label="Slide 2"></button>
+            <button class="dot h-2.5 w-2.5 rounded-full bg-slate-400" aria-label="Slide 3"></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog -->
+      <section id="blog" class="container mx-auto px-6 mt-24" data-aos="fade-up">
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="group rounded-xl overflow-hidden border hover:shadow-soft-3 transition-shadow">
+            <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop" alt="Designing with depth" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"></div>
+            <div class="p-5"><h3 class="font-heading text-lg">Designing with depth: shadows done right</h3><a href="#cta" class="text-sm text-primary hover:underline">Read more</a></div>
+          </article>
+          <article class="group rounded-xl overflow-hidden border hover:shadow-soft-3 transition-shadow">
+            <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop" alt="When gradients should be invisible" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"></div>
+            <div class="p-5"><h3 class="font-heading text-lg">When gradients should be invisible</h3><a href="#cta" class="text-sm text-primary hover:underline">Read more</a></div>
+          </article>
+          <article class="group rounded-xl overflow-hidden border hover:shadow-soft-3 transition-shadow">
+            <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop" alt="Motion that whispers, not shouts" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"></div>
+            <div class="p-5"><h3 class="font-heading text-lg">Motion that whispers, not shouts</h3><a href="#cta" class="text-sm text-primary hover:underline">Read more</a></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section id="cta" class="relative mt-24">
+        <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-primary/0 to-transparent"></div>
+        <div class="container mx-auto px-6">
+          <div class="overflow-hidden rounded-2xl p-10 md:p-14 bg-gradient-to-br from-primary to-amber-700 text-white shadow-glow">
+            <div class="grid gap-6 md:grid-cols-2 md:items-center">
+              <div data-aos="fade-right">
+                <h3 class="font-heading text-3xl md:text-4xl">Ready to elevate your brand?</h3>
+                <p class="mt-2 text-white/85 max-w-prose">Let’s craft something exceptional together—designed to perform and built to last.</p>
+              </div>
+              <div class="flex md:justify-end items-center" data-aos="fade-left">
+                <a href="#" class="btn-premium bg-gradient-to-br from-white to-white text-primary hover:opacity-95">Start your project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-24 border-t">
+      <div class="container mx-auto px-6 py-10 grid gap-6 md:grid-cols-3">
+        <div>
+          <div class="flex items-center gap-2"><span class="inline-block h-7 w-7 rounded-lg bg-primary shadow-glow"></span><span class="font-heading text-lg">Aurelia</span></div>
+          <p class="mt-3 text-sm text-slate-600 max-w-xs">Modern premium experiences with elegant details and performance-first builds.</p>
+        </div>
+        <div>
+          <h4 class="font-heading mb-3">Explore</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#services" class="hover:text-primary transition-colors">Services</a></li>
+            <li><a href="#why-us" class="hover:text-primary transition-colors">Why Us</a></li>
+            <li><a href="#blog" class="hover:text-primary transition-colors">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading mb-3">Get in touch</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#cta" class="hover:text-primary transition-colors">Contact</a></li>
+            <li><a href="#cta" class="hover:text-primary transition-colors">Get a Quote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t">
+        <div class="container mx-auto px-6 py-6 text-xs text-slate-600 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p>© <span id="year"></span> Aurelia. All rights reserved.</p>
+          <div class="flex items-center gap-4"><a href="#" class="hover:text-primary">Privacy</a><a href="#" class="hover:text-primary">Terms</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
+      // Mobile menu
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+      // Scroll progress
+      const progressBar = document.getElementById('progressBar');
+      window.addEventListener('scroll', () => {
+        const h = document.documentElement; const p = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100; progressBar.style.width = p + '%';
+      });
+      // About slider
+      const aboutImgs = [
+        'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?q=80&w=1600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1600&auto=format&fit=crop'
+      ];
+      const aboutEl = document.getElementById('aboutImg');
+      let ai = 0; setInterval(() => { ai = (ai + 1) % aboutImgs.length; aboutEl.src = aboutImgs[ai]; }, 3500);
+      // Video play overlay
+      const playBtn = document.getElementById('playOverlay');
+      const frame = document.getElementById('videoFrame');
+      const poster = document.getElementById('videoPoster');
+      playBtn.addEventListener('click', () => { frame.src = 'https://www.youtube.com/embed/ysz5S6PUM-U?autoplay=1&rel=0'; poster.remove(); playBtn.remove(); });
+      // Testimonials slider
+      const tWrap = document.getElementById('tWrap'); const dots = Array.from(document.querySelectorAll('.dot'));
+      let ti = 0; function go(n){ ti = (n + 3) % 3; tWrap.style.transform = `translateX(-${ti*100}%)`; dots.forEach((d,idx)=>{ d.classList.toggle('bg-primary', idx===ti); d.classList.toggle('w-6', idx===ti); }); }
+      document.getElementById('tPrev').addEventListener('click', ()=>go(ti-1));
+      document.getElementById('tNext').addEventListener('click', ()=>go(ti+1));
+      dots.forEach((d,idx)=>d.addEventListener('click',()=>go(idx)));
+      setInterval(()=>go(ti+1), 5000);
+      // Footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
