@@ -40,6 +40,12 @@
       .card-premium{border-radius:.75rem;border:1px solid rgba(15,23,42,.08);background:rgba(255,255,255,.7);backdrop-filter:blur(16px);box-shadow:0 6px 24px -8px rgba(0,0,0,.15);transition:box-shadow .25s,transform .25s}
       .card-premium:hover{box-shadow:0 18px 48px -12px rgba(0,0,0,.28)}
       .noise{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.05;mix-blend:multiply}
+
+      /* Existing styles are kept from the previous response for context */
+  @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
+  @keyframes float-fast { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  .animate-float-fast { animation: float-fast 5s ease-in-out infinite; }
     </style>
   </head>
   <body class="bg-white text-slate-900 font-body antialiased selection:bg-primary/20 selection:text-primary">
@@ -100,27 +106,82 @@
 
     <main>
       <!-- Hero -->
-      <section class="relative pt-32 md:pt-40">
-        <div class="container mx-auto px-6 grid gap-12 lg:grid-cols-2 items-center">
-          <div data-aos="fade-up" class="space-y-6">
-            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs border border-primary/20">Premium Design Studio</span>
-            <h1 class="font-heading text-4xl leading-tight md:text-5xl lg:text-6xl">Elevate Your Brand with Elegant Digital Experiences</h1>
-            <p class="text-slate-600 max-w-prose">We craft modern interfaces with smooth shadows, soft gradients, and seamless animations. Built to perform, designed to impress.</p>
-            <div class="flex flex-col sm:flex-row gap-3 pt-2">
-              <a href="#cta" class="btn-premium">Get Started</a>
-              <a href="#services" class="inline-flex items-center justify-center px-5 py-3 rounded-md border hover:bg-slate-100">Our Services</a>
+<section class="relative pt-32 md:pt-40 pb-24 overflow-hidden">
+  <div aria-hidden="true" class="absolute inset-0 z-0 opacity-60">
+    <svg class="absolute top-0 left-0 w-full h-auto" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <path d="M0 200C0 200 360 400 720 200C1080 0 1440 200 1440 200V900H0V200Z" fill="url(#paint0_linear_wave)" />
+      <path d="M0 150C0 150 360 300 720 150C1080 0 1440 150 1440 150V900H0V150Z" fill="url(#paint1_linear_wave)" style="mix-blend-mode: overlay" />
+      <defs>
+        <linearGradient id="paint0_linear_wave" x1="720" y1="0" x2="720" y2="900" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#87550D" stop-opacity="0.05" />
+          <stop offset="1" stop-color="#87550D" stop-opacity="0" />
+        </linearGradient>
+        <linearGradient id="paint1_linear_wave" x1="720" y1="0" x2="720" y2="900" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#87550D" stop-opacity="0.1" />
+          <stop offset="1" stop-color="#87550D" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="grid gap-12 lg:grid-cols-2 items-start">
+      <div data-aos="fade-right" class="space-y-6 lg:text-left text-center">
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs border border-primary/20">Premium Design Studio</span>
+        <h1 class="font-heading text-4xl leading-tight md:text-5xl lg:text-6xl">Elevate Your Brand with Elegant Digital Experiences</h1>
+        <p class="text-slate-600 max-w-lg mx-auto lg:mx-0 text-lg">We craft modern interfaces with smooth shadows, soft gradients, and seamless animations. Built to perform, designed to impress.</p>
+        <div class="flex flex-col sm:flex-row gap-3 pt-2 justify-center lg:justify-start">
+          <a href="#cta" class="btn-premium px-6 py-3 rounded-md">Get Started</a>
+          <a href="#services" class="inline-flex items-center justify-center px-5 py-3 rounded-md border hover:bg-slate-100">Our Services</a>
+        </div>
+        <div class="grid gap-6 sm:grid-cols-2 mt-12">
+          <div class="card-premium p-6 flex items-center gap-4 text-left" data-aos="zoom-in" data-aos-delay="100">
+            <div class="h-12 w-12 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-md ring-1 ring-primary/20 shrink-0">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-heading text-lg text-slate-800">Trusted Results</h3>
+              <p class="text-sm text-slate-600 mt-1">Proven outcomes across startups and enterprises.</p>
             </div>
           </div>
-          <div data-aos="fade-left" class="relative">
-            <div class="relative rounded-xl overflow-hidden shadow-xl shadow-black/20 ring-1 ring-black/10">
-              <div class="absolute left-3 top-3 z-10 rounded-full bg-black/70 text-white text-xs px-2 py-1 backdrop-blur-md">Ad • Trusted by 500+ brands</div>
-              <div class="aspect-video bg-black">
-                <iframe class="h-full w-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Promo video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
+          <div class="card-premium p-6 flex items-center gap-4 text-left" data-aos="zoom-in" data-aos-delay="200">
+            <div class="h-12 w-12 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-md ring-1 ring-primary/20 shrink-0">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><path d="M8 2v20M16 2v20"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-heading text-lg text-slate-800">Performance-first</h3>
+              <p class="text-sm text-slate-600 mt-1">Ship fast experiences without compromising aesthetics.</p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      <div data-aos="fade-left" class="relative flex justify-center lg:justify-end lg:mt-0 mt-12">
+        <div class="absolute top-4 left-0 bg-white/80 backdrop-blur-md p-3 rounded-lg shadow-soft-1 border border-slate-200 flex items-center gap-2 animate-float-slow z-20">
+          <span class="h-4 w-4 rounded-full bg-green-500 block"></span>
+          <span class="text-sm font-medium text-slate-700">Live Demo</span>
+        </div>
+
+        <div class="relative w-full max-w-2xl aspect-[4/3] bg-slate-200 rounded-xl flex items-center justify-center shadow-xl shadow-black/20 ring-1 ring-black/10">
+          <iframe id="heroVideoFrame" class="absolute inset-0 w-full h-full rounded-xl" src="https://www.youtube.com/embed/1ucLq6JTxac?autoplay=1&rel=0&showinfo=0&modestbranding=1" title="Promo Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="absolute bottom-8 right-0 bg-white/80 backdrop-blur-md p-3 rounded-lg shadow-soft-1 border border-slate-200 flex items-center gap-2 animate-float-fast z-20">
+          <span class="text-sm font-medium text-slate-700">New Feature!</span>
+          <span class="h-4 w-4 rounded-full bg-blue-500 block"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
 
       <!-- Success Cards -->
       <section class="container mx-auto px-6 mt-16" data-aos="fade-up">
@@ -370,6 +431,29 @@
       window.addEventListener('scroll', () => {
         const h = document.documentElement; const p = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100; progressBar.style.width = p + '%';
       });
+
+
+       // Hero Video Player Logic
+   // Hero Video Player Logic
+  const heroPlayBtn = document.getElementById('heroPlayBtn');
+  const heroVideoFrame = document.getElementById('heroVideoFrame');
+  const heroVideoPoster = document.getElementById('heroVideoPoster');
+
+  if (heroPlayBtn) {
+    heroPlayBtn.addEventListener('click', () => {
+      // আপনার দেওয়া নতুন ভিডিও লিঙ্কটি এখানে যুক্ত করা হয়েছে
+      heroVideoFrame.src = 'https://www.youtube.com/embed/1ucLq6JTxac?autoplay=1&rel=0&showinfo=0&modestbranding=1';
+      heroVideoPoster.classList.add('opacity-0');
+      heroPlayBtn.classList.add('opacity-0', 'pointer-events-none');
+      
+      setTimeout(() => {
+        if(heroVideoPoster) heroVideoPoster.remove();
+        if(heroPlayBtn) heroPlayBtn.remove();
+      }, 500);
+    });
+  }
+
+
       // About slider
       const aboutImgs = [
         'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop',
