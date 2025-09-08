@@ -246,3 +246,6 @@ const tabs = document.querySelectorAll('.w-choose-us-tab');
     footerYearEl.textContent = new Date().getFullYear();
   }
    
+
+
+  
