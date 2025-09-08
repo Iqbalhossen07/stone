@@ -142,135 +142,102 @@ const tabs = document.querySelectorAll('.w-choose-us-tab');
 
 
     // ভিডিও মডাল এর জন্য JavaScript
-  const videoCardContainers = document.querySelectorAll('.video-card-container');
-  const modal = document.getElementById('videoModal');
-  const closeModalBtn = document.getElementById('closeModal');
-  const player = document.getElementById('youtubePlayer');
-
-  if (modal) {
-    videoCardContainers.forEach(card => {
-      card.addEventListener('click', () => {
-        const videoId = card.getAttribute('data-video-id');
-        player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-        modal.classList.remove('hidden');
-      });
-    });
-
-    const closeModal = () => {
-      modal.classList.add('hidden');
-      player.src = '';
-    };
-
-    closeModalBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeModal();
+  // Helper function to extract YouTube Video ID from various URLs
+  function getYouTubeVideoId(url) {
+    let videoId = null;
+    try {
+      // Handle embed URL
+      const embedMatch = url.match(/(?:youtube\.com\/(?:embed\/|v\/)|youtu\.be\/|\/(?:ytc|yts)\/)([\w-]{11})/);
+      if (embedMatch && embedMatch[1]) {
+        videoId = embedMatch[1];
+      } else {
+        // Handle watch URL
+        const urlObj = new URL(url);
+        if (urlObj.hostname === 'www.youtube.com' || urlObj.hostname === 'youtube.com') {
+          videoId = urlObj.searchParams.get('v');
+        } else if (urlObj.hostname === 'youtu.be') {
+          videoId = urlObj.pathname.split('/')[1];
+        }
       }
-    });
+    } catch (e) {
+      console.error("Invalid URL provided:", url, e);
+    }
+    return videoId;
   }
 
+  // ভিডিও মডাল এবং থাম্বনেইল লোড করার জন্য JavaScript
+  document.addEventListener('DOMContentLoaded', () => {
+    const videoCardContainers = document.querySelectorAll('.video-card-container');
+    const modal = document.getElementById('videoModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const player = document.getElementById('youtubePlayer');
 
+    if (modal) {
+      videoCardContainers.forEach(card => {
+        const videoUrlString = card.getAttribute('data-video-url');
+        const imgElement = card.querySelector('.video-thumbnail');
 
-   const carouselWrapper = document.getElementById('testimonialCarouselWrapper');
-  const carousel = document.getElementById('testimonialCarousel');
-  const prevBtn = document.getElementById('prevTestimonial');
-  const nextBtn = document.getElementById('nextTestimonial');
-  const dotsContainer = document.getElementById('testimonialDots');
-  const testimonialCards = document.querySelectorAll('.testimonial-card');
-  let slideIndex = 0;
-  let autoSlideInterval;
+        if (videoUrlString && imgElement) {
+          const videoId = getYouTubeVideoId(videoUrlString);
+          if (videoId) {
+            // Try to load maxresdefault.jpg first, then fall back to others
+            const potentialThumbnails = [
+              `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+              `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+              `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
+              `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`,
+              `https://img.youtube.com/vi/${videoId}/default.jpg`
+            ];
 
-  const getCardsPerPage = () => {
-    return window.innerWidth >= 768 ? 2 : 1;
-  };
+            let loaded = false;
+            for (let i = 0; i < potentialThumbnails.length; i++) {
+              const testImg = new Image();
+              testImg.onload = () => {
+                if (!loaded) {
+                  imgElement.src = potentialThumbnails[i];
+                  loaded = true;
+                }
+              };
+              testImg.onerror = () => {
+                // If this thumbnail fails, try the next one
+              };
+              testImg.src = potentialThumbnails[i];
+              if (loaded) break; // Stop trying if a thumbnail successfully loaded
+            }
+          } else {
+            console.warn(`Could not extract video ID from URL: ${videoUrlString}`);
+          }
+        }
 
-  const updateCarousel = () => {
-    const cardsPerPage = getCardsPerPage();
-    const slideWidth = carouselWrapper.offsetWidth / cardsPerPage * cardsPerPage; // Get the full width of one slide (e.g., 2 cards)
-    carousel.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
-    updateDots();
-  };
+        card.addEventListener('click', () => {
+          const clickedVideoUrlString = card.getAttribute('data-video-url');
+          if (clickedVideoUrlString) {
+            let finalVideoUrl = new URL(clickedVideoUrlString);
+            
+            // Add necessary parameters for a clean, autoplaying embed
+            finalVideoUrl.searchParams.set('autoplay', '1');
+            finalVideoUrl.searchParams.set('rel', '0');
+            finalVideoUrl.searchParams.set('modestbranding', '1');
 
-  const createDots = () => {
-    dotsContainer.innerHTML = '';
-    const cardsPerPage = getCardsPerPage();
-    const numSlides = Math.ceil(testimonialCards.length / cardsPerPage);
-
-    for (let i = 0; i < numSlides; i++) {
-      const dot = document.createElement('span');
-      dot.classList.add('testimonial-dot');
-      if (i === slideIndex) {
-        dot.classList.add('active');
-      }
-      dot.addEventListener('click', () => {
-        slideIndex = i;
-        updateCarousel();
+            player.src = finalVideoUrl.toString();
+            modal.classList.remove('hidden');
+          }
+        });
       });
-      dotsContainer.appendChild(dot);
+
+      const closeModal = () => {
+        modal.classList.add('hidden');
+        player.src = ''; // Stop the video
+      };
+
+      closeModalBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
     }
-  };
-
-  const updateDots = () => {
-    const dots = dotsContainer.querySelectorAll('.testimonial-dot');
-    dots.forEach((dot, index) => {
-      dot.classList.remove('active');
-      if (index === slideIndex) {
-        dot.classList.add('active');
-      }
-    });
-  };
-  
-  const handleNext = () => {
-    const cardsPerPage = getCardsPerPage();
-    const numSlides = Math.ceil(testimonialCards.length / cardsPerPage);
-    if (slideIndex < numSlides - 1) {
-      slideIndex++;
-    } else {
-      slideIndex = 0; // Loop to beginning
-    }
-    updateCarousel();
-  };
-
-  const handlePrev = () => {
-    const cardsPerPage = getCardsPerPage();
-    const numSlides = Math.ceil(testimonialCards.length / cardsPerPage);
-    if (slideIndex > 0) {
-      slideIndex--;
-    } else {
-      slideIndex = numSlides - 1; // Loop to end
-    }
-    updateCarousel();
-  };
-
-  const startAutoSlide = () => {
-    stopAutoSlide();
-    autoSlideInterval = setInterval(handleNext, 5000);
-  };
-  
-  const stopAutoSlide = () => {
-    clearInterval(autoSlideInterval);
-  };
-
-  prevBtn.addEventListener('click', () => { stopAutoSlide(); handlePrev(); startAutoSlide(); });
-  nextBtn.addEventListener('click', () => { stopAutoSlide(); handleNext(); startAutoSlide(); });
-  
-  if(carouselWrapper) {
-    carouselWrapper.addEventListener('mouseenter', stopAutoSlide);
-    carouselWrapper.addEventListener('mouseleave', startAutoSlide);
-  }
-  
-  window.addEventListener('resize', () => {
-    slideIndex = 0;
-    createDots();
-    updateCarousel();
-    startAutoSlide();
   });
-
-  // Initial setup
-  createDots();
-  updateCarousel();
-  startAutoSlide();
-
 
 
     // ফুটারের বছর স্বয়ংক্রিয়ভাবে আপডেট করার জন্য
